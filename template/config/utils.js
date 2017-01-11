@@ -1,18 +1,18 @@
 var path = require('path')
-var config = require('../config')
+var config = require('../build/config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
-  var assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
+  var assetsSubDirectory = process.env.NODE_ENV === 'production' ?
+    config.build.assetsSubDirectory :
+    config.dev.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
 }
 
 exports.cssLoaders = function (options) {
   options = options || {}
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loaders) {
+  function generateLoaders(loaders) {
     var sourceLoader = loaders.map(function (loader) {
       var extraParamChar
       if (/\?/.test(loader)) {

@@ -1,5 +1,5 @@
 var path = require('path')
-var config = require('../config')
+var config = require('../build/config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
@@ -36,8 +36,7 @@ module.exports = {
   },
   module: {
     {{#lint}}
-    preLoaders: [
-      {
+    preLoaders: [{
         test: /\.vue$/,
         loader: 'eslint',
         include: [
@@ -55,8 +54,7 @@ module.exports = {
       }
     ],
     {{/lint}}
-    loaders: [
-      {
+    loaders: [{
         test: /\.vue$/,
         loader: 'vue'
       },
@@ -96,7 +94,9 @@ module.exports = {
   },
   {{/lint}}
   vue: {
-    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
+    loaders: utils.cssLoaders({
+      sourceMap: useCssSourceMap
+    }),
     postcss: [
       require('autoprefixer')({
         browsers: ['last 2 versions']
