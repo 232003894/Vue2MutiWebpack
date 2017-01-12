@@ -26,6 +26,9 @@ moduleExports.configDir = path.resolve(moduleExports.srcRootDir, './config')
 // 存放公共资源 图片字体等
 moduleExports.assetsDir = path.resolve(moduleExports.srcRootDir, './assets')
 
+// 与业务逻辑无关的库都可以放到这里
+moduleExports.libsDir = path.resolve(moduleExports.srcRootDir, './libs')
+
 /**
  * 生成文件目录
  */
