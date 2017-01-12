@@ -1,6 +1,6 @@
 var path = require('path')
-var config = require('../build/config')
-var utils = require('./utils')
+var config = require('../../build/config')
+var utils = require('../utils')
 var projectRoot = path.resolve(__dirname, '../')
 
 var env = process.env.NODE_ENV
