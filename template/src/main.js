@@ -13,6 +13,8 @@ new Vue({
   {{/if_eq}}
   {{#if_eq build "standalone"}}
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
   {{/if_eq}}
 })

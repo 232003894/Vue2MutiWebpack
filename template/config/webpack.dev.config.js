@@ -2,7 +2,7 @@ var config = require('../build/config')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
 var utils = require('./utils')
-var baseWebpackConfig = require('./base/webpack.base.config')
+var baseWebpackConfig = require('./webpack.base.config')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrors = require('friendly-errors-webpack-plugin')
 
