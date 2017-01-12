@@ -4,6 +4,7 @@
 {{/if_eq}}
 import Vue from 'vue'
 import App from './App'
+import config from 'config'
 
 /* eslint-disable no-new */
 new Vue({

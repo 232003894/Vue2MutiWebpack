@@ -20,7 +20,9 @@ module.exports = {
       {{/if_eq}}
       'src': dir.srcRootDir,
       'assets': dir.assetsDir,
-      'components': dir.componentsDir
+      'components': dir.componentsDir,
+      /* config */
+      'config': path.resolve(dir.configDir, '')
     }
   },
   resolveLoader: {

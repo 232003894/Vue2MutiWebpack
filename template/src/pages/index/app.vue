@@ -2,6 +2,7 @@
   <div id="app">
     <img src="../../assets/logo.png">
     <hello></hello>
+    <i class="icon iconfont icon-homeon"></i>
   </div>
 </template>
 
@@ -12,6 +13,9 @@
     name: 'app',
     components: {
       Hello
+    },
+    mounted() {
+      console.log(JSON.stringify(window.common, null, 2))
     }
   }
 </script>
