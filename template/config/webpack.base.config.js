@@ -68,6 +68,7 @@ module.exports = {
         query: {
           limit: 10000,
           name: 'img/[name].[ext]?[hash]'
+          // name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
       {
@@ -76,6 +77,7 @@ module.exports = {
         query: {
           limit: 10000,
           name: 'fonts/[name].[ext]?[hash]'
+          // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
     ]
