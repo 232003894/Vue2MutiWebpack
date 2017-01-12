@@ -29,11 +29,19 @@ moduleExports.assetsDir = path.resolve(moduleExports.srcRootDir, './assets')
 // 与业务逻辑无关的库都可以放到这里
 moduleExports.libsDir = path.resolve(moduleExports.srcRootDir, './libs')
 
+// 存放自定义的通用VUE组件
+moduleExports.componentsDir = path.resolve(moduleExports.srcRootDir, './components')
+
+// 存放自定义的通用VUE组件
+moduleExports.pubsComponentsDir = path.resolve(moduleExports.srcRootDir, './components/pubs')
+
+// 存放自定义的业务VUE组件
+moduleExports.businessComponentsDir = path.resolve(moduleExports.srcRootDir, './components/business')
+
 /**
  * 生成文件目录
  */
 
 // 存放编译后生成的所有代码、资源（图片、字体等，虽然只是简单的从源目录迁移过来）
 moduleExports.buildDir = path.resolve(moduleExports.staticRootDir, './dist')
-
 module.exports = moduleExports;

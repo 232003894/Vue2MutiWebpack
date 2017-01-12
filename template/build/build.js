@@ -4,24 +4,22 @@ require('shelljs/global')
 env.NODE_ENV = 'production'
 
 var path = require('path')
-var config = require('./config')
 var ora = require('ora')
 var webpack = require('webpack')
 var webpackConfig = require('../config/webpack.prod.config')
+var dir = require('../config/base/dir')
 
+rm('-rf', dir.buildDir)
 console.log(
   '  Tip:\n' +
-  '  Built files are meant to be served over an HTTP server.\n' +
-  '  Opening index.html over file:// won\'t work.\n'
+  '  可以用文件路径打开访问\n' +
+  '  dist已清空\n'
 )
-
-var spinner = ora('building for production...')
+var spinner = ora('生成中...')
 spinner.start()
 
-var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
-rm('-rf', assetsPath)
-mkdir('-p', assetsPath)
-cp('-R', 'static/*', assetsPath)
+mkdir('-p', dir.buildDir)
+cp('-R', 'static/', dir.buildDir)
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
@@ -31,6 +29,9 @@ webpack(webpackConfig, function (err, stats) {
     modules: false,
     children: false,
     chunks: false,
-    chunkModules: false
+    chunkModules: false,
+    hash: false,
+    version: false,
+    timings: false
   }) + '\n')
 })

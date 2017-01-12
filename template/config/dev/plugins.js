@@ -2,7 +2,7 @@ var webpack = require('webpack')
 var FriendlyErrors = require('friendly-errors-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
-var dirVars = require('../base/dir')
+var dir = require('../base/dir')
 var pageArr = require('../base/page-entries')
 var entries = require('./entry')
 var config = require('../../build/config')
@@ -10,7 +10,8 @@ var config = require('../../build/config')
 var pluginsConfig = []
 // 环境参数
 pluginsConfig.push(new webpack.DefinePlugin({
-  'process.env': config.dev.env
+  'process.env': config.dev.env,
+  IS_PRODUCTION: false
 }))
 pluginsConfig.push(new webpack.optimize.OccurenceOrderPlugin())
 pluginsConfig.push(new webpack.HotModuleReplacementPlugin())
@@ -22,8 +23,8 @@ pageArr.forEach((page) => {
   if (path.basename(page) === basename) {
     var _page = page.replace('\/' + basename, '').replace('\/', '_')
     var conf = {
-      filename: config.dev.htmlDir + '/' + _page + '.html',
-      template: path.resolve(dirVars.pagesDir, `./${page}`), // 模板路径
+      filename: config.htmlDir + '/' + _page + '.html',
+      template: path.resolve(dir.pagesDir, `./${page}`), // 模板路径
       inject: true // js插入位置
     }
     if (_page in entries) {

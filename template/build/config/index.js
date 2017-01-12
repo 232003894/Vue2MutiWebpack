@@ -1,5 +1,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
+
 var copyPath = ''
 var chromename = ''
 var userDataPath = ''
@@ -13,14 +14,11 @@ if (process.platform == 'win32') { //windows
   chromename = 'google-chrome'
   userDataPath = ''
 }
+
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    productionSourceMap: true,
+    productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
@@ -31,10 +29,7 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8080,
-    htmlDir: "html",
     index: 'index.html',
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
@@ -43,6 +38,7 @@ module.exports = {
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
   },
+  htmlDir: "html",
   chrome: {
     //Chrome 在 OS X 中 'google chrome', 在 Linux 中 'google-chrome' 在 Windows 中'chrome'.
     name: chromename,

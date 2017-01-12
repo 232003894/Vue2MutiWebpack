@@ -1,7 +1,7 @@
 var path = require('path')
 var config = require('../build/config')
+var dir = require('./base/dir')
 var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide whether to enable CSS source maps for the
@@ -13,18 +13,18 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 module.exports = {
   resolve: {
     extensions: ['', '.js', '.vue', '.json'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    fallback: [path.join(dir.staticRootDir, './node_modules')],
     alias: {
       {{#if_eq build "standalone"}}
       'vue$': 'vue/dist/vue.common.js',
       {{/if_eq}}
-      'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'src': dir.srcRootDir,
+      'assets': dir.assetsDir,
+      'components': dir.componentsDir
     }
   },
   resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+    fallback: [path.join(dir.staticRootDir, './node_modules')]
   },
   module: {
     {{#lint}}
@@ -32,7 +32,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'eslint',
         include: [
-          path.join(projectRoot, 'src')
+          dir.srcRootDir
         ],
         exclude: /node_modules/
       },
@@ -40,7 +40,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint',
         include: [
-          path.join(projectRoot, 'src')
+          dir.srcRootDir
         ],
         exclude: /node_modules/
       }
@@ -54,7 +54,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         include: [
-          path.join(projectRoot, 'src')
+          dir.srcRootDir
         ],
         exclude: /node_modules/
       },
@@ -67,7 +67,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: 'img/[name].[ext]?[hash]'
         }
       },
       {
@@ -75,7 +75,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: 'fonts/[name].[ext]?[hash]'
         }
       }
     ]
