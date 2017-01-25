@@ -40,6 +40,7 @@ module.exports = {
     cssSourceMap: false
   },
   htmlDir: "html",
+  copyPath: copyPath,
   chrome: {
     //Chrome 在 OS X 中 'google chrome', 在 Linux 中 'google-chrome' 在 Windows 中'chrome'.
     name: chromename,
