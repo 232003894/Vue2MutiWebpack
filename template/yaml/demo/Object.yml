@@ -1,0 +1,52 @@
+tags:
+  - 文档示例
+name: Obj
+filetype: object
+note: |
+  对象类型文档
+tip: |
+  提示样式
+warn: |
+  警告样式
+attrs:
+  abc:
+    type: String
+    note: 对象(Obj)的属性
+    fields:
+      title:
+        type: String
+        note: 对象(Obj)属性(abc)的字段或选项
+      onShow:
+        type: Function
+        note: 对象(Obj)属性(abc)的方法
+methods:
+  test:
+    note: 对象(Obj)的方法
+    return:
+        type: any|array
+        note: 对象(Obj)的方法(test)的返回值
+    args:
+      msg:
+        type: String|Object
+        note: 对象(Obj)方法(test)的输入参数(msg),必填
+      options:
+        type: Object
+        note: 对象(Obj)方法(test)的输入参数(options),非必填
+        required: false
+        fields:
+          title:
+            type: String|Object
+            note: 对象(Obj)方法(test)的输入参数(options)的字段或选项
+          onShow:
+            type: Function
+            note: 对象(Obj)方法(test)的输入参数(options)的方法
+      title:
+        type: String
+        note: 对象(Obj)方法(test)的输入参数,非必填
+        required: false
+    code: |        
+      // 简单示例 msg
+      $api.test('消息123')
+changes:
+  v1.0.0:
+      - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'

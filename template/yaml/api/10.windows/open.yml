@@ -1,0 +1,43 @@
+tags:
+  - 窗体
+  - 通用
+  - H5Plus扩展
+name: open
+filetype: method
+note: |
+  打开新窗口
+tip: |
+  web,5+ 有效<br>
+  web:直接打开新url<br>
+  5+:打开新窗口
+args:
+  id:
+    type: String
+    note: 窗体id,必须唯一
+  opts:
+    type: Object
+    note: 选项,只在5+中有用
+    required: false
+    fields:
+      extras:
+        type: Object
+        note: 显示Webview窗口扩展参数,将传递到新窗口
+        required: false
+      styles:
+        type: Object
+        note: Webview窗口的样式
+        required: false
+      showOpts:
+        type: Object
+        note: Webview窗口显示动画参数,aniShow:动画类型,duration:动画持续时间
+        required: false
+code: |        
+  $api.open('demo_setting', {
+    uid:'1358',
+    uname:'test user'
+    }
+  })
+return: 
+  type: Object
+  note: 新开窗体(Webview),web:则返回null
+changes:

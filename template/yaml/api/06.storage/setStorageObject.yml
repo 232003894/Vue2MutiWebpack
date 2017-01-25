@@ -1,0 +1,24 @@
+tags:
+  - Storage
+  - 通用
+name: setStorageObject
+filetype: Method
+note: |
+  修改或添加键值对数据到对应存储(Key)对象的属性(objKey-value)的值
+args:
+  key:
+    type: String
+    required: true
+    note: 存储的键名
+  objKey:
+    type: String
+    required: true
+    note: 对象中的键名
+  value:
+    type: Any
+    required: true
+    note: 键值
+code: |       
+  // $settings.version 
+  $api.setStorageObject('$settings','version','1.00')
+changes:

@@ -1,0 +1,23 @@
+tags:
+  - 窗体
+  - 通用
+name: mounted
+filetype: method
+note: |
+  Dom加载完成
+args:
+  callback:
+    type: Function
+    note: 窗体
+  needRefresh:
+    type: Boolean
+    note: 默认值:true,是否需要加入刷新列表中,提供给refresh使用
+    required: false
+return:
+  type: Object
+  note: $api对象
+code: |        
+  $api.mounted(()=>{
+    console.log('页面加载完成')
+  },false)
+changes:

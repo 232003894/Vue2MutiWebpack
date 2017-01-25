@@ -1,0 +1,20 @@
+tags:
+  - Storage
+  - 通用
+name: getState
+filetype: Method
+note: |
+  通过键(key)检索获取当前状态的值
+  相当于 getStorageObject 指定key的简写
+args:
+  key:
+    type: String
+    required: true
+    note: 键名
+return: 
+  type: Any
+  note: 对应键值
+code: |       
+  // $state uid
+  $api.getState('uid')
+changes:

@@ -1,0 +1,12 @@
+tags:
+  - 页面字典
+  - 通用
+name: pages
+filetype: attr
+note: |
+  所有页面的字典
+type: object
+code: | 
+  // {demo_setting:"demo_setting.html", index:"index.html"}
+  $api.pages
+changes:

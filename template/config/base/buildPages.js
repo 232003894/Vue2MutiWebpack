@@ -20,5 +20,5 @@ exports.build = function () {
   })
   var jsStr = "export const pages = " + JSON.stringify(entries, null, 2).replace(/"/g, '\'')
   jsStr += "\r\n"
-  fs.writeFileSync(path.resolve(dir.libsDir, 'api/pages.js'), jsStr)
+  fs.writeFileSync(path.resolve(dir.libsDir, 'api/build_pages.js'), jsStr)
 }

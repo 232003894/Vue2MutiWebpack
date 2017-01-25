@@ -28,4 +28,6 @@
       "vue"
     ]
   }
+,
+"vsicons.presets.angular": false
 }

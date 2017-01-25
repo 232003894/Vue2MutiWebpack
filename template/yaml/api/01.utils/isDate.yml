@@ -1,0 +1,20 @@
+tags:
+  - Utils
+  - 通用
+name: isDate
+filetype: Method
+note: |
+  判定是否是日期类型
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为日期类型
+code: |    
+  var date = new Date()
+  // true 
+  $api.isDate(date)
+changes:

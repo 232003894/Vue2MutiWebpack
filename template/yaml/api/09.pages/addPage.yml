@@ -1,0 +1,21 @@
+tags:
+  - 页面字典
+  - 通用
+name: addPage
+filetype: Method
+note: |
+  添加新的页面到pages字典中
+args:
+  page:
+    type: Object
+    required: true
+    note: 新的页面键值对
+return: 
+  type: Object
+  note: 完整的pages字典
+code: |       
+  // {demo_setting:"demo_setting.html", index:"index.html", test:"test.html"}
+  $api.addPage({
+    'test': 'test.html'
+  })
+changes:

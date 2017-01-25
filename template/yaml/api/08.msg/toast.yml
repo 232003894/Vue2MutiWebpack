@@ -1,0 +1,50 @@
+tags:
+  - Dialog
+  - H5Plus扩展
+  - 组件扩展
+name: toast
+filetype: method
+note: |
+  提示消息<br>
+  弹出的提示消息为非阻塞模式，显示指定时间后自动消失
+tip: |
+  window原生模式不可用<br>
+  Vue组件模式、H5+模式 可用<br>
+  优先级：Vue组件模式 > H5 Plus模式
+args:
+  msg:
+    type: String
+    note: 提示内容
+  options:
+    type: Object
+    note: 其他选项
+    required: false
+    fields:
+      time:
+        type: Number
+        note: 持续时间
+      onShow:
+        type: Function
+        note: 提示前执行方法
+      onHide:
+        type: Function
+        note: 提示关闭后执行方法
+code: |        
+  // 简单示例 msg
+  $api.toast('消息123')
+
+  // 完整示例 
+  $api.toast('消息123',{
+    time:2000,
+    onShow:()=>{
+      console.log('onShow')
+    },
+    onHide:()=>{
+      console.log('onHide')
+    }
+  })
+changes:
+  v0.0.1:
+    - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'
+  v0.0.2:
+    - '[todo] 暂未实现Vue组件模式'

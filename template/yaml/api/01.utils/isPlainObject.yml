@@ -1,0 +1,27 @@
+tags:
+  - Utils
+  - 通用
+name: isPlainObject
+filetype: Method
+note: |
+  判定是否是一个纯净的对象<br>
+  不能为window, 任何类(包括自定义类)的实例,元素节点,文本节点
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为一个纯净的对象
+code: |    
+  var tmp = window
+  // false 
+  $api.isPlainObject(tmp)
+
+  var obj = {
+    title:'ddd'
+  }
+  // true 
+  $api.isPlainObject(obj)
+changes:

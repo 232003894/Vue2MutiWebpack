@@ -1,0 +1,19 @@
+tags:
+  - Storage
+  - 通用
+name: getStorage
+filetype: Method
+note: |
+  通过键(key)检索获取应用存储的值
+args:
+  key:
+    type: String
+    required: true
+    note: 键名
+return: 
+  type: Any
+  note: 对应键值
+code: |       
+  // $settings 
+  $api.getStorage('$settings')
+changes:

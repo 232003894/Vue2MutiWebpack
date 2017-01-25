@@ -1,0 +1,18 @@
+tags:
+  - Utils
+  - 通用
+name: log
+filetype: Method
+note: |
+  输出日志<br>
+  相当于console.log,只是增加了时间输出
+args:
+  msg:
+    type: String
+    required: true
+    note: 要输出的消息
+code: |    
+  // [下午5:27:50 387]
+  // 日志输出
+  $api.log('日志输出')
+changes:

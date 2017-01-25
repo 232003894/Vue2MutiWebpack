@@ -1,0 +1,22 @@
+tags:
+  - Utils
+  - 通用
+name: isObject
+filetype: Method
+note: |
+  判定是否是对象类型
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为对象类型
+code: |    
+  var obj = {
+    title:'ddd'
+  }
+  // true 
+  $api.isObject(obj)
+changes:

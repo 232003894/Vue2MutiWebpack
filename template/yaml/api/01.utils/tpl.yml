@@ -1,0 +1,25 @@
+tags:
+  - Utils
+  - 通用
+name: tpl
+filetype: Method
+note: |
+  模板替换输出<br>
+  需要替换的部分使用'{#'+'#}'限定<br>
+  比如:{#name#}
+args:
+  tplStr:
+    type: String
+    required: true
+    note: 模板
+  data:
+    type: Object
+    required: true
+    note: 需要替换的数据
+return: 
+  type: String
+  note: 格式化替换的文本
+code: |    
+  // "最少输入12个字"
+  $api.tpl('最少输入{#minlength#}个字',{'minlength': 12})
+changes:

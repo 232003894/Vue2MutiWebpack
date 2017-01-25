@@ -1,0 +1,25 @@
+tags:
+  - Event
+  - 通用
+  - H5Plus扩展
+name: fireAll
+filetype: method
+note: |
+  所有窗体
+tip: |
+  H5+模式、window原生模式 可用<br><br>
+  H5+模式:所有窗体 <br>
+  window原生模:本窗体
+args:
+  eventType:
+    type: String
+    note: 事件名称
+  eventData:
+    type: Any
+    note: 通知数据
+    required: false
+code: |        
+  // 执行初始化
+  $api.fireAll('msgclose',{
+    msg:'消息'
+  })

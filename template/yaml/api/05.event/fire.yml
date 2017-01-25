@@ -1,0 +1,27 @@
+tags:
+  - Event
+  - 通用
+  - H5Plus扩展
+name: fire
+filetype: method
+note: |
+  单窗体事件通知
+tip: |
+  H5+模式、window原生模式 可用
+args:
+  winObj:
+    type: Object
+    note: 窗口对象 webview 或者 window
+  eventType:
+    type: String
+    note: 事件名称
+  eventData:
+    type: Any
+    note: 通知数据
+    required: false
+code: |        
+  // 执行初始化
+  $api.fire(window,'msgclose',{
+    msg:'消息'
+  })
+changes:

@@ -1,0 +1,13 @@
+tags:
+  - 窗体
+  - H5Plus扩展
+name: currentWebview
+filetype: attr
+note: |
+  当前窗体
+warn: |
+  只针对H5+
+type: object
+code: | 
+  $api.currentWebview
+changes:

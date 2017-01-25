@@ -1,0 +1,23 @@
+tags:
+  - Back
+  - H5Plus扩展
+name: plusBack
+filetype: Method
+note: |
+  H5Plus back
+warn: |
+  只在 H5+模式 模式中有效
+return: 
+  type: Boolean
+  note: | 
+    是否执行完成<br/><br/>
+    > 在需要退出app的情况时,<br/>
+    > 第一次back会提示‘再按一次退出应用’,<br/>
+    > back其实没有执行成功,<br/>
+    > 只有连续2次back,才会执行成功<br/>
+    > 在弹出权限层的时候,可以根据返回值true或false进行后续业务
+code: |    
+  $api.plusBack()
+changes:
+  v0.0.2:
+    - '[change] 增加返回值,表示是否执行完成'

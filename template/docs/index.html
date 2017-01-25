@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>文档</title>
+  <link rel="stylesheet" href="./font/iconfont.css">
+  <link rel="stylesheet" href="./static/docute.css">
+  <style>
+    * {
+      font-family: "Microsoft YaHei Light", "Hiragino Sans GB", Josefin Sans, sans-serif;
+    }
+    
+    .iconfontDoc {
+      font-family: "Microsoft YaHei Light", "Hiragino Sans GB", "iconfont"!important;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 1em;
+      margin-right: 5px;
+    }
+    
+    .header.is-desktop {
+      position: fixed;
+      background-color: #fff;
+      top: 0;
+      padding-top: 10px;
+      z-index: 999;
+      width: 100%;
+    }
+    
+    .type,
+    .change {
+      height: 18px;
+      font-size: 12px;
+      width: 60px;
+      color: #fff;
+      border-radius: 2px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 3px;
+    }
+    
+    .change {
+      height: 14px;
+      width: 72px;
+      line-height: 14px;
+      margin-right: 5px;
+    }
+    
+    .type-any {
+      background-color: #9acd32;
+      width: 40px;
+    }
+    
+    .type-object {
+      background-color: #33ab70;
+      width: 50px;
+    }
+    
+    .type-date {
+      background-color: #33ab70;
+      width: 50px;
+    }
+    
+    .type-string {
+      background-color: #27394c;
+      width: 50px;
+    }
+    
+    .type-boolean {
+      background-color: #d95353;
+      width: 55px;
+    }
+    
+    .type-false {
+      background-color: #aaa;
+    }
+    
+    .type-function {
+      background-color: #f4a358;
+    }
+    
+    .type-number {
+      background-color: #288af0;
+      width: 55px;
+    }
+    
+    .type-array {
+      background-color: #eb1ac1;
+      width: 50px;
+    }
+    
+    .component-play-box {
+      width: 100%;
+      height: 30px;
+      font-size: 14px;
+      line-height: 30px;
+      border: 1px dashed #ececec;
+      text-align: center;
+      border-radius: 3px;
+      color: #888;
+    }
+    
+    .markdown-body hr {
+      height: 1px;
+      margin: 0;
+    }
+    
+    li code,
+    .markdown-body p code,
+    td code {
+      color: #e96900;
+      background-color: #f8f8f8;
+    }
+    
+    .markdown-body td code {
+      background-color: #fff;
+    }
+    
+    pre+table {
+      margin-left: 30px;
+    }
+    
+    .change-deprecated {
+      background-color: #d95353;
+    }
+    
+    .change-todo {
+      width: 40px;
+      background-color: #27394c;
+    }
+    
+    .change-enhance {
+      width: 60px;
+      background-color: #288af0;
+    }
+    
+    .change-fix {
+      width: 30px;
+      background-color: #288af0;
+    }
+    
+    .change-feature {
+      width: 55px;
+      background-color: #288af0;
+    }
+    
+    .change-change {
+      width: 50px;
+      background-color: #e96900;
+    }
+    
+    .prop-key {
+      font-family: "Microsoft YaHei Light", Consolas, Liberation Mono, Menlo, Courier, monospace;
+      font-size: 16px;
+      color: #3c763d;
+    }
+    
+    .property-key {
+      font-family: "Microsoft YaHei Light", Consolas, Liberation Mono, Menlo, Courier, monospace;
+      font-size: 16px;
+      color: #e96900;
+      font-weight: bold;
+    }
+    
+    .main {
+      margin-right: 0;
+      margin-left: 50px;
+    }
+    
+    .no-sidebar .main {
+      margin: 0 auto;
+    }
+    
+    .markdown-body h2,
+    h3,
+    h4,
+    h5 {
+      margin-top: 0 !important;
+      /*padding-top: 24px;*/
+    }
+    
+    .markdown-body h2,
+    h3 {
+      padding-top: 24px;
+    }
+    
+    .markdown-body p {
+      margin-bottom: 1px;
+    }
+    
+    .nav-list .nav-item {
+      font-size: 1.2em;
+    }
+    
+    .nav-list .nav-item>div {
+      min-width: 80px;
+    }
+    
+    .sidebar-heading-anchor {
+      font-size: 1.0em;
+    }
+    
+    .vux-demo-link {
+      color: #288af0;
+    }
+    
+    .vux-livingearth-nav {
+      color: #42b983!important;
+    }
+    
+    .vux-version {
+      text-align: center;
+      width: 50px;
+      color: #ccc;
+      text-shadow: 0 0 6px rgba(0, 120, 255, .9)
+    }
+    
+    .vux-title {
+      font-weight: 400;
+      text-align: center;
+      font-size: 40px;
+      margin: 20px 0
+    }
+    
+    .vux-github {
+      color: #fff
+    }
+    
+    .vux-sub-title {
+      font-size: 14px;
+      color: #ececec;
+      font-family: "Microsoft YaHei Light", Josefin Sans, sans-serif
+    }
+    
+    .vux-box,
+    .vux-center {
+      text-align: center
+    }
+    
+    .vux-box {
+      color: #fff;
+      padding: 15px;
+      width: 220px;
+      float: left;
+      background-color: #171717;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0
+    }
+    
+    .vux-qa {
+      background-color: #33ab70;
+      color: #fff;
+      padding: 2px 5px;
+      display: inline;
+    }
+    
+    .vux-green {
+      color: #3c763d;
+    }
+    
+    .vux-red {
+      color: #d95353;
+    }
+    
+    .vux-group-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #27394c;
+    }
+    
+    .vux-root-name {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #d95353;
+    }
+    
+    .vux-version-name {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #d95353;
+    }
+    
+    .vux-methods {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+    
+    .vux-method-title {
+      font-size: 1.5em;
+      color: #33ab70;
+    }
+    
+    .vux-arg-title {
+      font-size: 1.1em;
+    }
+    
+    .vux-arg-title .iconfontDoc {
+      margin-left: 12px;
+    }
+    
+    .vux-params {
+      font-size: 1.0em;
+      color: #0086b3;
+      font-weight: bold;
+    }
+    
+    .vux-params-property {
+      font-size: 1.0em;
+      color: #f4a358;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- don't remove this part start -->
+  <div id="app"></div>
+  <script src="./config.js"></script>
+  <script src="./static/docute.js"></script>
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+
+</html>

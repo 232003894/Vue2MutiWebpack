@@ -1,0 +1,23 @@
+tags:
+  - Storage
+  - 通用
+name: getStorageObject
+filetype: Method
+note: |
+  通过键(key)检索获取存储值中对象(objKey)的值
+args:
+  key:
+    type: String
+    required: true
+    note: 存储的键名
+  objKey:
+    type: String
+    required: true
+    note: 对象中的键名
+return: 
+  type: Any
+  note: 对应键值
+code: |       
+  // $settings.version
+  $api.getStorageObject('$settings','version')
+changes:

@@ -1,0 +1,15 @@
+tags:
+  - 窗体
+  - 通用
+  - H5Plus扩展
+name: goHome
+filetype: method
+note: |
+  回到首页
+tip: |
+  web,5+ 有效<br>
+  web:页面跳转<br>
+  5+:关闭所有非首页,显示启动页
+code: |        
+  $api.goHome()
+changes:

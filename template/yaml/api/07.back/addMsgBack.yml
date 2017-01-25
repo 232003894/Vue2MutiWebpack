@@ -1,0 +1,36 @@
+tags:
+  - Back
+  - 通用
+name: addMsgBack
+filetype: method
+note: |
+  添加'msgBacks'类型action的钩子
+args:
+  hook:
+    type: Object
+    note: hook action处理对象
+    fields:
+      name:
+        type: String
+        note: 名称
+        required: false
+      index:
+        type: Number
+        note: 排序值,默认值:1000
+        required: false
+      handle:
+        type: Function
+        note: 处理钩子,返回false代表中断,反之则继续
+        required: true
+code: |        
+  // 添加初始化action
+  $api.addMsgBack( {
+    name:'browser',
+    index:100,
+    handle:function () {
+      console.log('browser msgBacks')
+    }
+  })
+return: 
+  type: Array
+  note: 返回'msgBacks'类型的钩子集合

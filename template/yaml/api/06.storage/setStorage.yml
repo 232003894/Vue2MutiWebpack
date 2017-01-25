@@ -1,0 +1,20 @@
+tags:
+  - Storage
+  - 通用
+name: setStorage
+filetype: Method
+note: |
+  修改或添加键值(key-value)对数据到当前状态
+args:
+  key:
+    type: String
+    required: true
+    note: 键名
+  value:
+    type: Any
+    required: true
+    note: 键值
+code: |       
+  // $settings 
+  $api.setStorage('$settings',{version:'1.00'})
+changes:

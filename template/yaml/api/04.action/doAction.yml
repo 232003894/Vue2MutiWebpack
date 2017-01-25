@@ -1,0 +1,19 @@
+tags:
+  - Action
+  - 通用
+name: doAction
+filetype: method
+note: |
+  执行指定类型的action
+args:
+  type:
+    type: String
+    note: action类型
+  callback:
+    type: Function
+    note: 回调
+    required: false
+code: |        
+  // 执行初始化
+  $api.doAction('inits')
+changes:

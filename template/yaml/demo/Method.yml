@@ -1,0 +1,34 @@
+tags:
+  - 文档示例
+name: Fn
+filetype: Method
+note: |
+  单方法类型文档
+return:
+    type: any|array
+    note: '方法(Fn)的返回值'
+tip: |
+  提示样式
+warn: |
+  警告样式
+args:
+  abc:
+    type: String
+    note: '方法(Fn)的输入参数'
+  initOpts:
+    type: Object
+    note: '方法(Fn)的输入参数'
+    required: false
+    fields:
+      title:
+        type: String
+        note: 方法(Fn)输入参数的字段或选项
+      onShow:
+        type: Function
+        note: 方法(Fn)输入参数的方法
+code: |        
+  // 简单示例 msg
+  $api.alert.show('消息123')
+changes:
+  v1.0.0:
+      - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'

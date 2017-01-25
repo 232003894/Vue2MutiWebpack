@@ -15,9 +15,18 @@
       Hello
     },
     mounted() {
-      console.log(JSON.stringify(window.common, null, 2))
+      // console.log(JSON.stringify(window.common, null, 2))
+      window.$api.log(window.$api.plusBack)
+      window.$api.alertClose()
+
+      window.$api.mounted(() => {
+        window.$api.androidKeys()
+      })
     }
   }
+  window.$api.mounted(() => {
+    window.$api.log('test')
+  })
 </script>
 
 <style>

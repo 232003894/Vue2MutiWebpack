@@ -1,0 +1,70 @@
+tags:
+  - Dialog
+  - 通用
+  - H5Plus扩展
+  - 组件扩展
+name: confirm
+filetype: method
+note: |
+  用于显示一个带有指定消息和 OK 及取消按钮的对话框<br>
+tip: |
+  Vue组件模式、H5+模式、window原生模式 都可用<br>
+  优先级：Vue组件模式 > H5 Plus模式 > window原生模式
+args:
+  msg:
+    type: String
+    note: 提示内容
+  options:
+    type: Object
+    note: 其他选项
+    required: false
+    fields:
+      title:
+        type: String
+        note: 弹窗的标题<br>window.confirm下无效
+      confirmText:
+        type: String
+        note: 确定按钮文字<br>window.confirm下无效
+      cancelText:
+        type: String
+        note: 取消文字<br>window.confirm下无效
+      onShow:
+        type: Function
+        note: confirm显示前执行方法
+      onHide:
+        type: Function
+        note: confirm关闭后(确定或取消)执行方法
+      onConfirm:
+        type: Function
+        note: 确定方法
+      onCancel:
+        type: Function
+        note: 取消方法
+code: |        
+  // 简单示例 msg
+  $api.confirm('消息123')
+
+  // 完整示例 
+  $api.confirm('消息123',{
+    title:'标题',
+    confirmText:'YES',
+    cancelText:'NO',
+    onShow:()=>{
+      console.log('onShow')
+    },
+    onHide:()=>{
+      console.log('onHide')
+    },
+    onConfirm:()=>{
+      console.log('确定')
+    },
+    onCancel:()=>{
+      console.log('取消')
+    }
+  })
+changes:
+  v0.0.1:
+    - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'
+  v0.0.2:
+    - '[change] confirm.show 改为 confirm'
+    - '[todo] 暂未实现Vue组件模式'

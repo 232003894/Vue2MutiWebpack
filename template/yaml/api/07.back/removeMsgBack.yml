@@ -1,0 +1,20 @@
+tags:
+  - Back
+  - 通用
+name: removeMsgBack
+filetype: method
+note: |
+  删除'msgBacks'类型action的钩子
+args:
+  name:
+    type: String
+    note: 钩子名称
+  index:
+    type: Number
+    note: 钩子排序值
+return: 
+  type: Array
+  note: 该类型的钩子集合
+code: |        
+  // 删除指定的'msgBacks'action
+  $api.removeBack('browser',100)

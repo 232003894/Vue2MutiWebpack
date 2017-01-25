@@ -1,0 +1,27 @@
+tags:
+  - 窗体
+  - H5Plus扩展
+name: showWindow
+filetype: method
+note: |
+  显示指定窗体
+warn: |
+  只针对H5+
+args:
+  webview:
+    type: Object
+    note: 窗体
+  showLoading:
+    type: Boolean
+    note: 是否显示等待对话框
+    required: false
+  showOpts:
+    type: Object
+    note: Webview窗口显示动画参数,aniShow:动画类型,duration:动画持续时间
+    required: false
+code: |        
+  $api.showWindow('demo_setting',true,{
+    duration:200,
+    aniShow:'slide-in-right'
+  })
+changes:

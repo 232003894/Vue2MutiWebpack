@@ -1,0 +1,45 @@
+tags:
+  - Action
+  - 通用
+name: addAction
+filetype: method
+note: |
+  添加指定类型action的钩子
+warn: |
+  (type,name,index) 组合后必须唯一<br>
+  如果已经存在,则覆盖
+args:
+  type:
+    type: String
+    note: action类型
+  hook:
+    type: Object
+    note: hook action处理对象
+    fields:
+      name:
+        type: String
+        note: 名称
+        required: false
+      index:
+        type: Number
+        note: 排序值,默认值:1000
+        required: false
+      handle:
+        type: Function
+        note: 处理钩子,返回false代表中断,反之则继续
+        required: true
+code: |        
+  // 添加初始化action
+  $api.addAction('inits', {
+    name:'browser',
+    index:100,
+    handle:function () {
+      console.log('browser init')
+    }
+  })
+return: 
+  type: Array
+  note: 返回该类型的钩子集合
+changes:
+  v0.0.2:
+    - '[change] (type,name,index)组合后必须唯一 ,否则覆盖'

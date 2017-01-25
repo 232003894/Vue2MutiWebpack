@@ -1,0 +1,24 @@
+tags:
+  - 文档示例
+name: Attr
+filetype: attr
+note: |
+  单属性类型文档
+tip: |
+  提示样式
+warn: |
+  警告样式
+type: object
+fields:
+  title:
+    type: String
+    note: 属性(Attr)的字段或选项
+  onShow:
+    type: Function
+    note: 属性(Attr)的方法
+code: |        
+  // 简单示例 msg
+  $api.alert.show('消息123')
+changes:
+  v1.0.1:
+      - '[todo] 1.0.1,options为选填项'

@@ -1,0 +1,47 @@
+tags:
+  - Environment
+  - 通用
+  - H5Plus扩展
+name: os
+filetype: attr
+note: |
+  系统环境
+type: object
+fields:
+  name:
+    type: String
+    note: 系统环境名称
+  wechat:
+    type: Boolean|String
+    note: 不是微信环境返回false,是微信环境返回版本号
+  version:
+    type: String
+    note: 系统环境版本号
+  android:
+    type: Boolean
+    note: 是否安卓环境
+  isBadAndroid:
+    type: Boolean
+    note: 是否安卓非Chrome环境
+  ios:
+    type: Boolean
+    note: 是否为苹果设备
+  iphone:
+    type: Boolean
+    note: 是否为苹果手机
+  ipad:
+    type: Boolean
+    note: 是否为ipad
+  plus:
+    type: Boolean
+    note: 是否在5+基座中运行
+  stream:
+    type: Boolean
+    note: 是否为流应用
+code: | 
+  $api.os.android
+changes:
+  v0.0.1:
+    - '[change] 去掉wechat.version'
+  v0.0.2:
+    - '[change] 新增name字段'

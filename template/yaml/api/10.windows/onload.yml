@@ -1,0 +1,19 @@
+tags:
+  - 窗体
+  - 通用
+name: onload
+filetype: method
+note: |
+  Dom加载完成
+args:
+  callback:
+    type: Function
+    note: 窗体
+return:
+  type: Object
+  note: $api对象
+code: |        
+  $api.onload(()=>{
+    console.log('页面加载完成')
+  })
+changes:

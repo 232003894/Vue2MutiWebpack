@@ -1,0 +1,20 @@
+tags:
+  - Utils
+  - 通用
+name: isArray
+filetype: Method
+note: |
+  判定是否是数组类型
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为数组类型
+code: |    
+  var arr = [1,2,3]
+  // true 
+  $api.isArray(arr)
+changes:

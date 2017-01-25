@@ -1,0 +1,16 @@
+tags:
+  - Dialog
+  - 组件扩展
+name: alertClose
+filetype: method
+note: |
+  关闭弹窗信息<br>
+  主要用于Android中的后退键关闭弹窗
+warn: |
+  只在Vue组件模式可用
+code: |   
+  // 关闭弹窗
+  $api.alertClose()
+changes:
+  v0.0.2:
+    - '[change] 由alert.hide 改为 alertClose'

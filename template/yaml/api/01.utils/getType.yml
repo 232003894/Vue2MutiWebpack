@@ -1,0 +1,19 @@
+tags:
+  - Utils
+  - 通用
+name: getType
+filetype: Method
+note: |
+  获取类型
+args:
+  obj:
+    type: Any
+    required: true
+    note: 需要获取类型的对象
+return: 
+  type: String
+  note: "'boolean', 'number', 'string', 'function', 'array', 'date', 'regexp', 'object', 'error'"
+code: |       
+  // string 
+  $api.getType('12')
+changes:

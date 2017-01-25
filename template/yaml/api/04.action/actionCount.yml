@@ -1,0 +1,29 @@
+tags:
+  - Action
+  - 通用
+name: actionCount
+filetype: method
+note: |
+  获取符合条件的action的钩子的数量
+args:
+  type:
+    type: String
+    note: action类型
+  name:
+    type: String
+    note: 钩子名称
+    required: false
+  index:
+    type: Number
+    note: 钩子排序值
+    required: false
+return: 
+  type: Number
+  note: 符合条件的action的钩子的数量
+code: |     
+  $api.actionCount('inits')
+  $api.actionCount('inits','browser')
+  $api.actionCount('inits','browser',2)
+changes:
+  v0.0.2:
+    - '[change] 增加 name,index 参数'

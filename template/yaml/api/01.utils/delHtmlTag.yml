@@ -1,0 +1,20 @@
+tags:
+  - Utils
+  - 通用
+name: delHtmlTag
+filetype: Method
+note: |
+  去掉所有html标记
+args:
+  html:
+    type: String
+    required: true
+    note: 待处理html
+return: 
+  type: String
+  note: 去掉 html tag的文本
+code: |    
+  var tmp = '<span class="type type-object">abcd</span>'
+  // "abcd" 
+  $api.delHtmlTag(tmp)
+changes:

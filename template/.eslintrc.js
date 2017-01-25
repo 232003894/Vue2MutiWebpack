@@ -12,6 +12,10 @@ module.exports = {
   plugins: [
     'html'
   ],
+  "globals": {
+    "plus": true,
+    "$api": true
+  },
   // add your custom rules here
   'rules': {
     {{#if_eq lintConfig "standard"}}

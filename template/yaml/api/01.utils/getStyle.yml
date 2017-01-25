@@ -1,0 +1,20 @@
+tags:
+  - Utils
+  - 通用
+name: getStyle
+filetype: Method
+note: |
+  获取dom元素的style对象
+args:
+  obj:
+    type: Object
+    required: true
+    note: dom元素
+return: 
+  type: Object
+  note: style对象
+code: |       
+  $api.getStyle(document.getElementById('test'))
+changes:
+  v0.0.2:
+    - '[change] 新增'

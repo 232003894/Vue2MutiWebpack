@@ -1,0 +1,55 @@
+tags:
+  - Dialog
+  - 通用
+  - H5Plus扩展
+  - 组件扩展
+name: alert
+filetype: method
+note: |
+  弹窗信息<br>
+  显示一个用户必须注意到并且必须点击按钮确认才能关闭的信息
+tip: |
+  Vue组件模式、H5+模式、window原生模式 都可用<br>
+  优先级：Vue组件模式 > H5 Plus模式 > window原生模式
+args:
+  msg:
+    type: String
+    note: 提示内容
+  options:
+    type: Object
+    note: 其他选项
+    required: false
+    fields:
+      title:
+        type: String
+        note: 弹窗的标题<br>window.alert下无效
+      buttonText:
+        type: String
+        note: 按钮文字<br>window.alert下无效
+      onShow:
+        type: Function
+        note: 弹窗前执行方法
+      onHide:
+        type: Function
+        note: 弹窗确定后执行方法
+code: |        
+  // 简单示例 msg
+  $api.alert('消息123')
+
+  // 完整示例 
+  $api.alert('消息123',{
+    title:'标题',
+    buttonText:'知道了',
+    onShow:()=>{
+      console.log('onShow')
+    },
+    onHide:()=>{
+      console.log('onHide')
+    }
+  })
+changes:
+  v0.0.1:
+    - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'
+  v0.0.2:
+    - '[change] 由alert.show 改为 alert'
+    - '[todo] 暂未实现Vue组件模式'

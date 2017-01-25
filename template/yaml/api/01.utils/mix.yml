@@ -1,0 +1,57 @@
+tags:
+  - Utils
+  - 通用
+name: mix
+filetype: Method
+note: |
+  用于合并多个对象或深克隆,类似于jQuery.extend <br/>
+  多个数组也可以合并,这里数组可以理解为以索引为属性的对象,对应的索引位会被替换 <br/>
+  mix(target, [object1, objectN]) <br/>
+  mix([deep], target, [object1, objectN])
+args:
+  '[deep]':
+    type: Boolean
+    required: true
+    note: 深拷贝,如果是true，合并成为递归
+  target:
+    type: Object|Array
+    required: true
+    note: 对象扩展，它将接收新的属性
+  object1:
+    type: Object|Array
+    required: false
+    note: 一个对象，它包含额外的属性合并到第一个参数
+  objectN:
+    type: Object|Array
+    required: false
+    note: 一个对象，它包含额外的属性合并到第一个参数
+return: 
+  type: Object|Array
+  note: 返回 target
+code: |   
+
+  // 多个对象拷贝
+  // {"title":"sss","obj":{"sub":"abc","test":"sub123"}}
+  $api.mix({title:'dd',obj:{sub:'abc',subtitle:'sub'}},{title:'sss',obj:{sub:'abc',test:'sub123'}})
+  
+  // 多个对象深度拷贝
+  // {"title":"sss","obj":{"sub":"abc","subtitle":"sub","test":"sub123"}}
+  $api.mix(true,{title:'dd',id:123,obj:{sub:'abc',subtitle:'sub'}},{title:'sss',id1:123,obj:{sub:'abc',test:'sub123'}})
+  
+  // 多个数组拷贝
+  // [4,{"sub":"abc","test":"sub123"},3,5]
+  $api.mix([1,{sub:'abc',subtitle:'sub'},2,5],[4,{sub:'abc',test:'sub123'},3])
+
+  // 多个数组深度拷贝
+  // [4,{"sub":"abc","subtitle":"sub","test":"sub123"},3,5]
+  $api.mix(true,[1,{sub:'abc',subtitle:'sub'},2,5],[4,{sub:'abc',test:'sub123'},3])
+
+  // 对象拷贝到数组中
+  // [1, 1, 2, title: "ddd", id: 123]
+  $api.mix([1,1,2],{title:'dd',id:123})
+
+  // 数组拷贝到对象中
+  // Object {0: 1, 1: 1, 2: 2, title: "dd", id: 123}
+  $api.mix({title:'dd',id:123},[1,1,2])
+
+changes:

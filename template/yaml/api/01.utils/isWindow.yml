@@ -1,0 +1,20 @@
+tags:
+  - Utils
+  - 通用
+name: isWindow
+filetype: Method
+note: |
+  判定是否是window对象
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为window对象
+code: |    
+  var tmp = window
+  // true 
+  $api.isWindow(tmp)
+changes:

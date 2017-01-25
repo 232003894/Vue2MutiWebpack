@@ -1,0 +1,22 @@
+tags:
+  - Utils
+  - 通用
+name: isFunction
+filetype: Method
+note: |
+  判定是否是函数类型
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为函数类型
+code: |       
+  var fun = function(){
+    // ...
+  }
+  // true 
+  $api.isFunction(fun)
+changes:

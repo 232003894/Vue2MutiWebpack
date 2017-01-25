@@ -1,0 +1,20 @@
+tags:
+  - Utils
+  - 通用
+name: isRegExp
+filetype: Method
+note: |
+  判定是否是正则表达式类型
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为正则表达式类型
+code: |    
+  var raspnetjson = /^\/Date\((\d+)\)\/$/   
+  // true 
+  $api.isRegExp(raspnetjson)
+changes:

@@ -12,6 +12,11 @@
     name: 'app',
     components: {
       Hello
+    },
+    mounted() {
+      window.$api.mounted(() => {
+        window.$api.androidKeys()
+      })
     }
   }
 </script>

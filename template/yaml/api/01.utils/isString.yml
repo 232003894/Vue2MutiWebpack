@@ -1,0 +1,19 @@
+tags:
+  - Utils
+  - 通用
+name: isString
+filetype: Method
+note: |
+  判定是否是字符串类型
+args:
+  value:
+    type: Any
+    required: true
+    note: 需要判断的对象
+return: 
+  type: Boolean
+  note: 是否为字符串类型
+code: |       
+  // true 
+  $api.isString('12')
+changes:

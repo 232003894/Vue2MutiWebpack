@@ -8,6 +8,8 @@ var ora = require('ora')
 var webpack = require('webpack')
 var webpackConfig = require('../config/webpack.prod.config')
 var dir = require('../config/base/dir')
+var config = require('./config')
+var opn = require('opn')
 
 rm('-rf', dir.buildDir)
 console.log(
@@ -34,4 +36,15 @@ webpack(webpackConfig, function (err, stats) {
     version: false,
     timings: false
   }) + '\n')
+
+  // 删除指定目录, 并将生成的文件复制到指定目录
+  var copyPath = config.copyPath || ''
+  if (copyPath !== '') {
+    rm('-rf', copyPath + '\\dist')
+    cp('-R', path.resolve(dir.buildDir, ''), copyPath)
+    console.log("清理并复制文件到指定路径：" + copyPath)
+    opn(copyPath, {
+      wait: false
+    })
+  }
 })

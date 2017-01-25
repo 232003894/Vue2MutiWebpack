@@ -1,0 +1,17 @@
+tags:
+  - Back
+  - 通用
+name: setPreBack
+filetype: Method
+note: |
+  设置back前处理
+args:
+  preBack:
+    type: Function
+    required: true
+    note: back action 前的预处理方法
+code: |    
+  $api.setPreBack(()=>{
+    $api.log('back前处理')
+  })
+changes:

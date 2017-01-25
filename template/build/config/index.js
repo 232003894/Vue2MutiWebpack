@@ -7,6 +7,7 @@ var userDataPath = ''
 if (process.platform == 'win32') { //windows
   chromename = 'chrome'
   userDataPath = 'D:\\tmp\\CMyChromeDevUserData'
+  copyPath = 'D:\\chenw\\Documents\\HBuilderProject\\vuetest'
 } else if (process.platform == 'darwin') { //windows
   chromename = 'google chrome'
   userDataPath = '/Users/kaifa/Documents/tmp'

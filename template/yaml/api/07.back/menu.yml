@@ -1,0 +1,14 @@
+tags:
+  - Back
+  - H5Plus扩展
+name: menu
+filetype: Method
+note: |
+  H5Plus 菜单
+warn: |
+  只在 H5+模式 模式中有效
+code: |    
+  $api.menu()
+changes:
+  v0.0.2:
+    - '[todo] 暂未实现菜单功能'

@@ -1,0 +1,21 @@
+tags:
+  - Back
+  - 通用
+name: back
+filetype: Method
+note: |
+  执行back action(后退)<br>
+  比如header的后退
+tip: |
+  执行顺序:msgback > beforeback > back的hooks<br>
+  back的hooks中则更加index的顺序来执行,一般情况下是先 h5+的back 再web的back
+args:
+  closeMsg:
+    type: Boolean
+    required: false
+    note: 是否先执行msg类型的关闭(常用于安卓后退按键的后退),默认值false
+code: |    
+  $api.back()
+changes:
+  v0.0.2:
+    - '[change] 合并了backWithMsg方法,通过closeMsg参数'

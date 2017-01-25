@@ -1,0 +1,13 @@
+tags:
+  - 窗体
+  - 通用
+name: refresh
+filetype: method
+note: |
+  业务逻辑刷新<br/>
+return:
+  type: Object
+  note: $api对象
+code: |        
+  $api.refresh()
+changes:

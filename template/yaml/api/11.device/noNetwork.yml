@@ -1,0 +1,12 @@
+tags:
+  - Device
+  - H5Plus扩展
+name: noNetwork
+filetype: method
+note: |
+  是否网络无连接
+warn: |
+  只在5+下使用
+code: | 
+  $api.noNetwork()
+changes:

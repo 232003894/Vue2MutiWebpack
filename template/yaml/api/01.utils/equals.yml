@@ -1,0 +1,80 @@
+tags:
+  - Utils
+  - 通用
+name: equals
+filetype: Method
+note: |
+  比较2个对象是否相等,递归比较<br>
+  可以比较2个对象的全部属性,也可以只比较指定属性<br>
+  如果是function类型会转成字符串比较
+args:
+  x:
+    type: Any
+    required: true
+    note: 需要比较的对象
+  y:
+    type: Any
+    required: true
+    note: 需要比较的对象
+  propertys:
+    type: String
+    required: false
+    note: 指定需要比较的属性,多字段用","分隔
+return: 
+  type: Boolean
+  note: 是否为一个纯净的对象
+code: | 
+  // true 
+  $api.equals([1,2,3],[1,2,3])
+  
+  // false 
+  $api.equals({sub:'abc',sub1:'abc',subtitle:'sub'},{sub:'abc',sub1:'abc',test:'sub123'})
+
+  // 比较指定字段
+  // false 
+  $api.equals({sub:'abc',sub1:'abc',subtitle:'sub'},{sub:'abc',sub1:'abc',test:'sub123'},'sub,sub1')
+
+  // true
+  $api.equals(function a(){
+    return '123'
+  },function a(){
+    return '123'
+  })
+
+  // false
+  $api.equals(function a(){
+    // 123
+    return '123'
+  },function a(){
+    return '123'
+  })
+
+  // false
+  $api.equals(function a(){
+    return '123'
+  },function b(){
+    return '123'
+  })
+
+  // true
+  $api.equals({
+    fun:function (){
+      return '123'
+    }
+  },{
+    fun:function (){
+      return '123'
+    }
+  })
+
+  // false
+  $api.equals({
+    fun:function (){
+      return '1'
+    }
+  },{
+    fun:function (){
+      return '2'
+    }
+  })
+changes:

@@ -1,0 +1,19 @@
+tags:
+  - Dialog
+  - H5Plus扩展
+  - 组件扩展
+name: loadingClose
+filetype: method
+note: |
+  关闭等待对话框<br>
+tip: |
+  window原生模式不可用<br>
+  Vue组件模式、H5+模式 可用
+warn: |
+  优先级：H5 Plus模式 > Vue组件模式
+code: |   
+  // 关闭等待对话框
+  $api.loadingClose()
+changes:
+  v0.0.2:
+    - '[change] 从loading中分离出来loadingClose'

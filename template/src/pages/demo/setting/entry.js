@@ -2,6 +2,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.config with an alias.
 {{/if_eq}}
+import config from 'config'
 import Vue from 'vue'
 import App from './App'
 
