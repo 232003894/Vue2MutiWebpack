@@ -1,17 +1,7 @@
-# vue-webpack-boilerplate
 
-> A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
+## 使用
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack#1.0 my-project`
-
-## Documentation
-
-- [For this template](http://vuejs-templates.github.io/webpack): common questions specific to this template are answered and each part is described in greater detail
-- [For Vue 2.0](http://vuejs.org/guide/): general information about how to work with Vue, not specific to this template
-
-## Usage
-
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
+Vue多页项目模板.建议使用NPM 3 +
 
 ``` bash
 $ npm install -g vue-cli
@@ -21,17 +11,24 @@ $ npm install
 $ npm run dev
 ```
 
-## What's Included
+## 内容
 
-- `npm run dev`: first-in-class development experience.
-  - Webpack + `vue-loader` for single file Vue components.
-  - State preserving hot-reload
-  - State preserving compilation error overlay
-  - Lint-on-save with ESLint
-  - Source maps
+- `npm run dev`: 8080端口
+  - Webpack + `vue-loader` : 单文件Vue组件.
+  - 热加载.
+  - chrome打开`html/index.html`页面.
 
-- `npm run build`: Production ready build.
-  - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
-  - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
-  - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
-  - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
+- `npm run build`: 生成发布.
+  - JavaScript压缩 [UglifyJS](https://github.com/mishoo/UglifyJS2).
+  - HTML 压缩  [html-minifier](https://github.com/kangax/html-minifier).
+  - CSS从组件中提取并压缩 [cssnano](https://github.com/ben-eb/cssnano).
+  - 拷贝生成文件到指定目录.
+  - chrome打开`html/index.html`页面.
+
+- `npm run build-docs`: 生成文档.
+  - yaml文件.
+  - 文档是用[Docute](https://docute.js.org/#/zh-Hans/)编写的
+
+- `npm run docs`: 查看文档.
+  - 打开`http://127.0.0.1:8999`.
+  

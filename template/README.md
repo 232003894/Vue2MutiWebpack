@@ -11,9 +11,13 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# 生成
 npm run build
 
-```
+# 生成文档
+npm run build-docs
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 查看文档
+npm run docs
+
+```
