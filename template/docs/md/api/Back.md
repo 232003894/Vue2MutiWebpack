@@ -182,7 +182,7 @@ $api.back()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  合并了backWithMsg方法,通过closeMsg参数</span></li></ul>
 <br>
 
@@ -244,7 +244,7 @@ $api.canHistoryBack()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  getCanHistory和setCanHistory 合并为 canHistoryBack</span></li></ul>
 <br>
 
@@ -276,7 +276,7 @@ $api.menu()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.1.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现菜单功能</span></li></ul>
 <br>
 
@@ -320,7 +320,7 @@ $api.plusBack()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  增加返回值,表示是否执行完成</span></li></ul>
 <br>
 

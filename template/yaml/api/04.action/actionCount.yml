@@ -25,5 +25,5 @@ code: |
   $api.actionCount('inits','browser')
   $api.actionCount('inits','browser',2)
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] 增加 name,index 参数'

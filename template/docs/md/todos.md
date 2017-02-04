@@ -1,5 +1,5 @@
 <span></span>
-## <span class="vux-version-name">v0.0.2</span>
+## <span class="vux-version-name">v1.1.0</span>
 
 #### menu
 <ul><li><span style="font-size:15px;"><span class="change change-todo">todo</span>  暂未实现菜单功能</span></li></ul>

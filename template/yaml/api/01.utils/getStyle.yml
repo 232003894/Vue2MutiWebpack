@@ -16,5 +16,5 @@ return:
 code: |       
   $api.getStyle(document.getElementById('test'))
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] 新增'

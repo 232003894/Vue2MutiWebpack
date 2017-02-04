@@ -1,6 +1,3 @@
----
-sidebar: true
----
 <span></span>
 ## 文档
 

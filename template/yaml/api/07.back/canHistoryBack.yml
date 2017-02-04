@@ -25,5 +25,5 @@ code: |
   // get
   $api.canHistoryBack()
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] getCanHistory和setCanHistory 合并为 canHistoryBack'

@@ -41,7 +41,7 @@ fields:
 code: | 
   $api.os.android
 changes:
-  v0.0.1:
+  v1.0.0:
     - '[change] 去掉wechat.version'
-  v0.0.2:
+  v1.0.1:
     - '[change] 新增name字段'

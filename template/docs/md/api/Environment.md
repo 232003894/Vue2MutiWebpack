@@ -47,9 +47,9 @@ $api.os.android
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  新增name字段</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  去掉wechat.version</span></li></ul>
 <br>

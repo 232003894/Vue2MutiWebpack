@@ -30,5 +30,5 @@ code: |
   // 简单示例 msg
   $api.alert.show('消息123')
 changes:
-  v1.0.0:
+  v0.0.1:
       - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'

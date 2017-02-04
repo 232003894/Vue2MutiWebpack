@@ -17,5 +17,5 @@ args:
 code: |    
   $api.back()
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] 合并了backWithMsg方法,通过closeMsg参数'

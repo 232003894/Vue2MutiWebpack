@@ -91,10 +91,13 @@ $api.alert('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
- <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由alert.show 改为 alert</span></li><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.1</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由alert.show 改为 alert</span></li></ul>
+
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -128,7 +131,7 @@ $api.alertClose()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由alert.hide 改为 alertClose</span></li></ul>
 <br>
 
@@ -228,10 +231,13 @@ $api.confirm('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
- <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  confirm.show 改为 confirm</span></li><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.1</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  confirm.show 改为 confirm</span></li></ul>
+
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -265,7 +271,7 @@ $api.confirmClose()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由alert.hide 改为 alertClose</span></li></ul>
 <br>
 
@@ -356,10 +362,10 @@ $api.loading('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.1.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -396,7 +402,7 @@ $api.loadingClose()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  从loading中分离出来loadingClose</span></li></ul>
 <br>
 
@@ -486,10 +492,10 @@ $api.toast('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.1.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -523,6 +529,6 @@ $api.toastClose()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由toast.hide 改为 toastClose</span></li></ul>
 <br>

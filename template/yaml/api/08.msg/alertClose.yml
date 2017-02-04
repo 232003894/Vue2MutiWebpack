@@ -12,5 +12,5 @@ code: |
   // 关闭弹窗
   $api.alertClose()
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] 由alert.hide 改为 alertClose'

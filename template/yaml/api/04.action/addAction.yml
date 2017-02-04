@@ -41,5 +41,5 @@ return:
   type: Array
   note: 返回该类型的钩子集合
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] (type,name,index)组合后必须唯一 ,否则覆盖'

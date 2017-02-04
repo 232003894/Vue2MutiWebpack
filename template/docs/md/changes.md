@@ -1,5 +1,5 @@
 <span></span>
-## <span class="vux-version-name">v0.0.2</span>
+## <span class="vux-version-name">v1.0.1</span>
 
 #### getStyle
  <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  新增</span></li></ul>
@@ -56,7 +56,7 @@
 #### toastClose
  <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  由toast.hide 改为 toastClose</span></li></ul>
 
-## <span class="vux-version-name">v0.0.1</span>
+## <span class="vux-version-name">v1.0.0</span>
 
 #### os
  <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  去掉wechat.version</span></li></ul>

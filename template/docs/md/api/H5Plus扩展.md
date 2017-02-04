@@ -47,10 +47,10 @@ $api.os.android
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  新增name字段</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  去掉wechat.version</span></li></ul>
 <br>
 
@@ -289,7 +289,7 @@ $api.menu()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.1.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现菜单功能</span></li></ul>
 <br>
 
@@ -333,7 +333,7 @@ $api.plusBack()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  增加返回值,表示是否执行完成</span></li></ul>
 <br>
 
@@ -424,10 +424,13 @@ $api.alert('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
- <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由alert.show 改为 alert</span></li><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.1</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  由alert.show 改为 alert</span></li></ul>
+
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -527,10 +530,13 @@ $api.confirm('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
- <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  confirm.show 改为 confirm</span></li><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.1</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  confirm.show 改为 confirm</span></li></ul>
+
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -621,10 +627,10 @@ $api.loading('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.1.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -661,7 +667,7 @@ $api.loadingClose()
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  从loading中分离出来loadingClose</span></li></ul>
 <br>
 
@@ -751,10 +757,10 @@ $api.toast('消息123',{
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.1.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  暂未实现Vue组件模式</span></li></ul>
 
-<span class="vux-params-property"> v0.0.1</span>
+<span class="vux-params-property"> v1.0.0</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 

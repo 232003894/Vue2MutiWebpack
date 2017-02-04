@@ -7832,7 +7832,7 @@
       o = {
         className: "template-variable",
         variants: [{
-          begin: "\{{",
+          begin: "{{",
           end: "}}"
         }, {
           begin: "%{",

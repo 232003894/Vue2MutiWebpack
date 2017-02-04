@@ -22,5 +22,5 @@ code: |
   // 删除指定的初始化action
   $api.removeAction('inits','browser',100)
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] 删除action的方法改进,不使用对象比较,通过(type,name,index)'

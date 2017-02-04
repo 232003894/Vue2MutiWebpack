@@ -227,7 +227,7 @@ $api.getStyle(document.getElementById('test'))
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  新增</span></li></ul>
 <br>
 

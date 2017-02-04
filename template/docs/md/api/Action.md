@@ -81,7 +81,7 @@ $api.actionCount('inits','browser',2)
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  增加 name,index 参数</span></li></ul>
 <br>
 
@@ -170,7 +170,7 @@ $api.addAction('inits', {
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  (type,name,index)组合后必须唯一 ,否则覆盖</span></li></ul>
 <br>
 
@@ -304,6 +304,6 @@ $api.removeAction('inits','browser',100)
 
 <br>
 
-<span class="vux-params-property"> v0.0.2</span>
+<span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  删除action的方法改进,不使用对象比较,通过(type,name,index)</span></li></ul>
 <br>

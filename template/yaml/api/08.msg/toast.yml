@@ -44,7 +44,7 @@ code: |
     }
   })
 changes:
-  v0.0.1:
+  v1.0.0:
     - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'
-  v0.0.2:
+  v1.1.0:
     - '[todo] 暂未实现Vue组件模式'

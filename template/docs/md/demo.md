@@ -46,8 +46,8 @@ $api.alert.show('消息123')
 
 <br>
 
-<span class="vux-params-property"> v1.0.1</span>
- <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  1.0.1,options为选填项</span></li></ul>
+<span class="vux-params-property"> v0.0.1</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-todo">todo</span>  0.0.1,options为选填项</span></li></ul>
 <br>
 
  ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>Fn</span>
@@ -130,7 +130,7 @@ $api.alert.show('消息123')
 
 <br>
 
-<span class="vux-params-property"> v1.0.0</span>
+<span class="vux-params-property"> v0.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
@@ -246,6 +246,6 @@ $api.test('消息123')
 
 <br>
 
-<span class="vux-params-property"> v1.0.0</span>
+<span class="vux-params-property"> v0.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>

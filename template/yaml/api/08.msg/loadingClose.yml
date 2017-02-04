@@ -15,5 +15,5 @@ code: |
   // 关闭等待对话框
   $api.loadingClose()
 changes:
-  v0.0.2:
+  v1.0.1:
     - '[change] 从loading中分离出来loadingClose'
