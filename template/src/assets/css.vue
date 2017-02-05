@@ -1,3 +1,3 @@
 <style lang="less">
-  @import 'base.less';
+  @import 'style.less';
 </style>

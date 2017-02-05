@@ -10,7 +10,7 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
-module.exports = {
+var webpackConfig = {
   resolve: {
     extensions: ['', '.js', '.vue', '.json'],
     fallback: [path.join(dir.staticRootDir, './node_modules')],
@@ -100,3 +100,33 @@ module.exports = {
     ]
   }
 }
+
+// vux
+const vuxLoader = require('vux-loader')
+module.exports = vuxLoader.merge(webpackConfig, {
+  options: {},
+  plugins: [{
+    name: 'vux-ui'
+  }, {
+    name: 'duplicate-style'
+  }, {
+    name: 'less-theme',
+    path: 'src/assets/theme.less'
+  }, {
+    name: 'js-parser',
+    test: /entry\.js/,
+    fn: function (source) {
+      var str = ['1', '2']
+      str = `[${str.join(',\n')}]`
+      source = source.replace(`const Vue = () => {}`, `import Vue from 'vue'
+import config from 'config'
+config(Vue)
+// 添加Fastclick移除移动端点击延迟
+const FastClick = require('fastclick')
+FastClick.attach(document.body)
+`)
+      console.log(source)
+      return source
+    }
+  }]
+})

@@ -6,3 +6,7 @@ import common from './common'
 if (!window.common) {
   window.common = common
 }
+
+export default function (vue) {
+  console.log('初始化')
+}
