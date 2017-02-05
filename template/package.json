@@ -19,7 +19,7 @@
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
-    {{#lint}}
+    {{#lint}}  
     "babel-eslint": "^7.0.0",
     {{/lint}}
     "babel-loader": "^6.0.0",
