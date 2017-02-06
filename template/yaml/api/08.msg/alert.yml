@@ -9,8 +9,13 @@ note: |
   弹窗信息<br>
   显示一个用户必须注意到并且必须点击按钮确认才能关闭的信息
 tip: |
-  Vue组件模式、H5+模式、window原生模式 都可用<br>
-  优先级：Vue组件模式 > H5 Plus模式 > window原生模式
+  Vue组件模式、H5+模式、window原生模式 都可用
+warn: |
+  options.nativeFirst：<br>
+  （默认值）<b>false：使用Vue组件</b><br>
+  优先级：Vue组件模式 > H5 Plus模式 > window原生模式<br>
+  <b>true：不使用Vue组件</b><br>
+  优先级：H5 Plus模式 > window原生模式
 args:
   msg:
     type: String
@@ -32,6 +37,15 @@ args:
       onHide:
         type: Function
         note: 弹窗确定后执行方法
+      nativeFirst:
+        type: Boolean
+        note: 【Vue组件】是否优先使用原生的，默认值false
+      maskTransition:
+        type: String
+        note: 【Vue组件】遮罩动画，默认值 'vux-fade'
+      dialogTransition:
+        type: String
+        note: 【Vue组件】弹窗主体动画，默认值 'vux-dialog'
 code: |        
   // 简单示例 msg
   $api.alert('消息123')
@@ -53,4 +67,5 @@ changes:
   v1.0.1:
     - '[change] 由alert.show 改为 alert'
   v1.1.0:
-    - '[todo] 暂未实现Vue组件模式'
+    - '[feature] 新增：调用Vue组件，实现！'
+    - '[change] 是否优先使用原生方法,nativeFirst'

@@ -11,7 +11,11 @@ tip: |
   window原生模式不可用<br>
   Vue组件模式、H5+模式 可用
 warn: |
-  优先级：H5 Plus模式 > Vue组件模式
+  options.nativeFirst：<br>
+  （默认值）<b>false：使用Vue组件</b><br>
+  优先级：Vue组件模式 > H5 Plus模式<br>
+  <b>true：不使用Vue组件</b><br>
+  优先级：H5 Plus模式
 args:
   msg:
     type: String
@@ -28,6 +32,9 @@ args:
       onHide:
         type: Function
         note: 提示关闭后执行方法
+      position:
+        type: String
+        note: 【Vue组件】定位方式，默认为absolute，在100%的布局下用absolute可以避免抖动
 code: |        
   // 简单示例 msg
   $api.loading()
@@ -46,4 +53,5 @@ changes:
   v1.0.0:
     - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'
   v1.1.0:
-    - '[todo] 暂未实现Vue组件模式'
+    - '[feature] 新增：调用Vue组件，实现！'
+    - '[change] 是否优先使用原生方法,nativeFirst'

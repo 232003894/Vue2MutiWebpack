@@ -16,7 +16,7 @@ export function alert(msg, options) {
   let onShow = () => {}
   let onHide = () => {}
   if (utils.isObject(options)) {
-    if (options.title || !msg) {
+    if (options.title && !msg) {
       msg = options.title
     }
     if (options.onShow) {

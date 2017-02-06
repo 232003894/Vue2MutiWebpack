@@ -7,7 +7,7 @@ note: |
   关闭confirm弹窗信息<br>
   主要用于Android中的后退键关闭弹窗
 warn: |
-  只在Vue组件模式可用
+  只在Vue组件模式 并且 显示时传入的 options.<b>nativeFirst</b>为<b>false</b>时（默认值）可用
 code: |   
   // 关闭弹窗
   $api.confirmClose()

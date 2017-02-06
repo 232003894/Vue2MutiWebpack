@@ -18,7 +18,7 @@ export function confirm(msg, options) {
   let onCancel = () => {}
   let onConfirm = () => {}
   if (utils.isObject(options)) {
-    if (options.title || !msg) {
+    if (options.title && !msg) {
       msg = options.title
     }
     if (options.onShow) {

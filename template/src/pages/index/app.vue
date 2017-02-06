@@ -35,7 +35,7 @@
     },
     mounted() {
       // console.log(JSON.stringify(window.common, null, 2))
-      window.$api.log(window.$api.plusBack)
+      window.$api.log(window.$api.toastClose)
       window.$api.alertClose()
 
       window.$api.mounted(() => {

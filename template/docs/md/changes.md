@@ -1,4 +1,33 @@
 <span></span>
+## <span class="vux-version-name">v1.1.0</span>
+
+#### alert
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
+
+
+#### alertClose
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+
+
+#### confirm
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
+
+
+#### loading
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
+
+
+#### loadingClose
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
+
+
+#### toast
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
+
+
+#### toastClose
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+
 ## <span class="vux-version-name">v1.0.1</span>
 
 #### getStyle

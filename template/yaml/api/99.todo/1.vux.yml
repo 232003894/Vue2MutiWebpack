@@ -1,0 +1,6 @@
+name: vux
+changes:
+  Next:
+    - '[todo] dialog:这个在组件扩展中注册api'
+    - '[todo] login:这个在组件扩展中注册api'
+    - '[todo] webError:这个在组件扩展中注册api'
