@@ -5,7 +5,7 @@ Vue多页项目模板.建议使用NPM 3 +
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init 232003894/Vue2MutiWebpack vue2-project
+$ vue init 232003894/Vue2MutiWebpack#vux2 vue2-project
 $ cd vue2-project
 $ npm install
 $ npm run dev
