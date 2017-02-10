@@ -11,6 +11,7 @@ import ToastPlugin from '../plugin/toast'
 import AlertPlugin from '../plugin/alert'
 import ConfirmPlugin from '../plugin/confirm'
 import LoadingPlugin from '../plugin/loading'
+import LoginPlugin from '../plugin/login'
 
 export default function (Vue) {
   // console.log('初始化')
@@ -18,4 +19,5 @@ export default function (Vue) {
   Vue.use(AlertPlugin, window.$api)
   Vue.use(ConfirmPlugin, window.$api)
   Vue.use(LoadingPlugin, window.$api)
+  Vue.use(LoginPlugin, window.$api)
 }

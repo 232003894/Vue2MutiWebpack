@@ -1,8 +1,9 @@
-import * as windows from './windows.js'
+import * as win from './windows.js'
 import * as back from './back'
 
 import '../h5/ready'
-windows.onload(() => {
+
+win.onload(() => {
   document.addEventListener('manualshow', function (e) {
     if (window.plus) {
       var w = window.plus.webview.currentWebview()
@@ -19,10 +20,6 @@ windows.onload(() => {
       }
     }
   })
-  document.addEventListener('fromChildrenBack', function (e) {
-    back.back()
-  })
-  document.addEventListener('fromChildrenMenu', function (e) {
-    back.menu()
-  })
+  document.addEventListener('fromChildrenBack', back.__back)
+  document.addEventListener('fromChildrenMenu', back.__menu)
 })

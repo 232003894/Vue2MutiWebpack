@@ -72,7 +72,12 @@ addBack({
  * @export
  */
 function winClose() {
-  msgConfirm('是否退出应用？', {
+  // todo:虽然效果达到了，但是直接使用$api不太合适，留着以后解决吧
+  var _confirm = msgConfirm
+  if ($api && $api.confirm) {
+    _confirm = $api.confirm
+  }
+  _confirm('是否退出应用？', {
     title: '提示',
     confirmText: '退出应用',
     cancelText: '不了',
@@ -101,13 +106,11 @@ export function setPreBack(preBack) {
  * @param {Boolean} closeMsg 是否先执行msg类型的关闭(常用于安卓后退按键的后退),默认值false
  */
 export function back(closeMsg) {
-  if (closeMsg === true) {
-    let hasMsgBacks = act.actionCount('msgBacks') > 0
-    // 如果有msgBacks钩子
-    if (hasMsgBacks) {
-      // 执行msg关闭
-      act.doAction('msgBacks')
-    }
+  // 是否有msgBacks钩子
+  let hasMsgBacks = act.actionCount('msgBacks') > 0
+  if (closeMsg === true && hasMsgBacks) {
+    // 执行msg关闭
+    act.doAction('msgBacks')
   } else {
     if (beforeback && utils.isFunction(beforeback)) {
       // 执行并判断是否继续,false表示终止
@@ -137,6 +140,7 @@ export function addMsgBack(back) {
  * @returns
  */
 export function removeMsgBack(name, index) {
+  // utils.log(name + ' : removeMsgBack')
   return act.removeAction('msgBacks', name, index)
 }
 

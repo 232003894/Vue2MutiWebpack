@@ -21,12 +21,44 @@
  <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
 
 
+#### login
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+
+
+#### loginCancle
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+
+
+#### loginClose
+ <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+
+
 #### toast
  <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li><li><span style="font-size:15px;"><span class="change change-change">change</span>  是否优先使用原生方法,nativeFirst</span></li></ul>
 
 
 #### toastClose
  <ul><li><span style="font-size:15px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+
+
+#### closeWindow
+ <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  新增</span></li></ul>
+
+
+#### hideWindow
+ <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  新增</span></li></ul>
+
+
+#### mounted
+ <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  "inRefresh"参数，，默认值改为 false</span></li><li><span style="font-size:15px;"><span class="change change-fix">fix</span>  手机app中会调用2次的bug</span></li></ul>
+
+
+#### onload
+ <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  新增"inRefresh"参数，表示是否要加入业务刷新列表中，默认值false</span></li></ul>
+
+
+#### webError
+ <ul><li><span style="font-size:15px;"><span class="change change-change">change</span>  新增</span></li></ul>
 
 ## <span class="vux-version-name">v1.0.1</span>
 

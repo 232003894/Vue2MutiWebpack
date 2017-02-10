@@ -420,10 +420,10 @@ $api.alert('消息123',{
   title:'标题',
   buttonText:'知道了',
   onShow:()=>{
-    console.log('onShow')
+    console.log('alert onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('alert onHide')
   }
 })
 
@@ -529,16 +529,16 @@ $api.confirm('消息123',{
   confirmText:'YES',
   cancelText:'NO',
   onShow:()=>{
-    console.log('onShow')
+    console.log('confirm onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('confirm onHide')
   },
   onConfirm:()=>{
-    console.log('确定')
+    console.log('confirm 确定')
   },
   onCancel:()=>{
-    console.log('取消')
+    console.log('confirm 取消')
   }
 })
 
@@ -620,6 +620,7 @@ Vue组件模式、H5+模式 可用
 | onShow | <span class="type type-function">Function</span> | <span class="type type-false">No</span> | 提示前执行方法 |
 | onHide | <span class="type type-function">Function</span> | <span class="type type-false">No</span> | 提示关闭后执行方法 |
 | position | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 【Vue组件】定位方式，默认为absolute，在100%的布局下用absolute可以避免抖动 |
+| nativeFirst | <span class="type type-boolean">Boolean</span> | <span class="type type-false">No</span> | 【Vue组件】是否优先使用原生的，默认值false |
 
 
 <br>
@@ -637,10 +638,10 @@ $api.loading('消息123')
 // 完整示例 
 $api.loading('消息123',{
   onShow:()=>{
-    console.log('onShow')
+    console.log('loading onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('loading onHide')
   }
 })
 
@@ -784,10 +785,10 @@ $api.toast('消息123')
 $api.toast('消息123',{
   time:2000,
   onShow:()=>{
-    console.log('onShow')
+    console.log('toast onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('toast onHide')
   }
 })
 
@@ -804,7 +805,7 @@ $api.toast('消息123',{
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  msg 属性从 options中单独出来,为必填项,options为选填项</span></li></ul>
 <br>
 
- ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe628;</i><span style="display:none"> </span>currentWebview</span>
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>closeWindow</span>
 
 
  ------------ 
@@ -813,18 +814,96 @@ $api.toast('消息123',{
 
  <br> 
 
- > 当前窗体
+ > <b style="color:blue">closeWindow(webview,[hideOpts])</b><br><br>关闭指定窗体
 
 
 <p class="warning">只针对H5+
 </p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>webview</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span> <span class="type type-string">String</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>plus窗体或窗体id</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[hideOpts]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>Webview窗口关闭的动画参数 aniHide：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose'>[参考]</a>动画类型 duration：动画持续时间，Number，单位ms</code>
+
+<br>
+
 
 <br><span class="vux-method-title">示例：</span>
 
 <br>
 
 ``` js
-$api.currentWebview
+// String
+$api.closeWindow('demo_setting',{
+  duration:200,
+  aniHide:'slide-out-right'
+})    
+// Object
+$api.closeWindow($api.currentWebview(),{
+  duration:200,
+  aniHide:'slide-out-right'
+})
+
+```
+
+<br><span class="vux-method-title">日志</span>
+
+<br>
+
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  新增</span></li></ul>
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>currentWebview</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">currentWebview()</b><br><br>当前窗体
+
+
+<p class="warning">只针对H5+
+</p>
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-object">Object</span>
+
+- 说明：当前窗体对象
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+$api.currentWebview()
 
 ```
 <br>
@@ -856,7 +935,7 @@ $api.goHome()
 ```
 <br>
 
- ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe628;</i><span style="display:none"> </span>isHomePage</span>
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>hideWindow</span>
 
 
  ------------ 
@@ -865,18 +944,96 @@ $api.goHome()
 
  <br> 
 
- > 是否主页
+ > <b style="color:blue">hideWindow(webview,[hideOpts])</b><br><br>隐藏指定窗体
 
 
 <p class="warning">只针对H5+
 </p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>webview</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span> <span class="type type-string">String</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>plus窗体或窗体id</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[hideOpts]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>Webview窗口关闭的动画参数 aniHide：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose'>[参考]</a>动画类型 duration：动画持续时间，Number，单位ms</code>
+
+<br>
+
 
 <br><span class="vux-method-title">示例：</span>
 
 <br>
 
 ``` js
-$api.isHomePage
+// String
+$api.hideWindow('demo_setting',{
+  duration:200,
+  aniHide:'slide-out-right'
+})    
+// Object
+$api.hideWindow($api.currentWebview(),{
+  duration:200,
+  aniHide:'slide-out-right'
+})
+
+```
+
+<br><span class="vux-method-title">日志</span>
+
+<br>
+
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  新增</span></li></ul>
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>isHomePage</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">isHomePage()</b><br><br>是否主页
+
+
+<p class="warning">只针对H5+
+</p>
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-boolean">Boolean</span>
+
+- 说明：是否主页
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+$api.isHomePage()
 
 ```
 <br>
@@ -935,7 +1092,7 @@ web:直接打开新url<br>
 |-------|-------|-------|-------|
 | extras | <span class="type type-object">Object</span> | <span class="type type-false">No</span> | 显示Webview窗口扩展参数,将传递到新窗口 |
 | styles | <span class="type type-object">Object</span> | <span class="type type-false">No</span> | Webview窗口的样式 |
-| showOpts | <span class="type type-object">Object</span> | <span class="type type-false">No</span> | Webview窗口显示动画参数,aniShow:动画类型,duration:动画持续时间 |
+| showOpts | <span class="type type-object">Object</span> | <span class="type type-false">No</span> | Webview窗口显示动画参数<br>aniShow：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow'>[参考]</a>动画类型<br>duration：动画持续时间，Number，单位ms |
 
 
 <br>
@@ -985,11 +1142,11 @@ $api.open('demo_setting', {
 
 <br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span> <span class="type type-string">String</span>
 
 <br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>窗体</code>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>plus窗体或窗体id</code>
 
 <br>
 
@@ -1002,7 +1159,7 @@ $api.open('demo_setting', {
 
 <br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>是否显示等待对话框</code>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>是否显示等待对话框，默认值true</code>
 
 <br>
 
@@ -1015,7 +1172,7 @@ $api.open('demo_setting', {
 
 <br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>Webview窗口显示动画参数,aniShow:动画类型,duration:动画持续时间</code>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>Webview窗口显示动画参数 aniShow：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow'>[参考]</a>动画类型 duration：动画持续时间，Number，单位ms</code>
 
 <br>
 
@@ -1025,7 +1182,13 @@ $api.open('demo_setting', {
 <br>
 
 ``` js
+// String
 $api.showWindow('demo_setting',true,{
+  duration:200,
+  aniShow:'slide-in-right'
+})    
+// Object
+$api.showWindow(webview,true,{
   duration:200,
   aniShow:'slide-in-right'
 })

@@ -17,6 +17,7 @@ if (os.plus) {
       if (options.time) {
         time = options.time
       }
+      time = (time <= 2000 ? 2000 : 3500)
       if (options.onShow) {
         onShow = options.onShow
       }
@@ -27,7 +28,7 @@ if (os.plus) {
     if (msg) {
       onShow()
       window.plus && window.plus.nativeUI.toast(msg, {
-        duration: time
+        duration: time === 2000 ? 'short' : 'long'
       })
       setTimeout(() => {
         onHide()

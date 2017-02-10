@@ -497,7 +497,7 @@ exports.buildChanges = function (infos) {
       // all
       __str += `\n#### ${j}\n`
       __str += ` <ul>`
-      // todo
+      // todos
       __str_todo += `\n#### ${j}\n`
       __str_todo += `<ul>`
 

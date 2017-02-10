@@ -28,36 +28,56 @@ const plugin = {
       document.body.appendChild($vm.$el)
     }
 
-    const show = (msg, options) => {
-      options = options || {}
-      if (options.nativeFirst === true) {
+    const show = (msg, opts) => {
+      opts = opts || {}
+      if (opts.nativeFirst === true) {
         nativeFirst = true
+      } else {
+        nativeFirst = false
       }
       if (nativeFirst && os.plus) {
         // 优先使用原生并且是plus环境
-        nShow(msg, options)
+        nShow(msg, opts)
       } else {
+        options.addMsgBack({
+          name: 'toast',
+          index: 50,
+          handle: function () {
+            // options.log('toast back')
+            if ($vm.show) {
+              hide()
+              return false
+            }
+            return true
+          }
+        })
         // destroy watcher
         watcher && watcher()
         // 提示内容，支持 html，和默认slot同样功能
-        options.text = msg || ''
-        if (typeof options === 'object') {
+        opts.text = msg || ''
+        if (typeof opts === 'object') {
           // 类型，可选值 success, warn, cancel, text
-          options.type = options.type || 'text'
+          opts.type = opts.type || 'text'
           // 显示时间
-          options.time = options.time || 2000
+          opts.time = opts.time || 2000
           // 是否显示遮罩，如果显示，用户将不能点击页面上其他元素
-          if (options.isShowMask === undefined) {
-            options.isShowMask = true
+          if (opts.isShowMask === undefined) {
+            opts.isShowMask = true
           }
-          options.onShow = options.onShow || (() => {})
-          options.onHide = options.onHide || (() => {})
-          for (let i in options) {
-            $vm[i] = options[i]
+          opts.onShow = opts.onShow || (() => {})
+          opts.onHide = opts.onHide || (() => {})
+          for (let i in opts) {
+            $vm[i] = opts[i]
           }
           watcher = $vm.$watch('show', (val) => {
-            val && options.onShow && options.onShow($vm)
-            val === false && options.onHide && options.onHide($vm)
+            // val && options.onShow && options.onShow($vm)
+            // val === false && options.onHide && options.onHide($vm)
+            if (val) {
+              opts.onShow($vm)
+            } else if (val === false) {
+              options.removeMsgBack('toast', 50)
+              opts.onHide($vm)
+            }
           })
         }
         $vm.show = true
@@ -68,7 +88,7 @@ const plugin = {
         // 优先使用原生并且是plus环境
         nHide()
       } else {
-        $vm.show = false
+        $vm.show === true && ($vm.show = false)
       }
     }
     vue.mixin({

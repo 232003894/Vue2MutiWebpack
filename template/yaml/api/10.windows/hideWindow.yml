@@ -1,0 +1,31 @@
+tags:
+  - 窗体
+  - H5Plus扩展
+name: hideWindow
+filetype: method
+note: |
+  隐藏指定窗体
+warn: |
+  只针对H5+
+args:
+  webview:
+    type: Object|String
+    note: plus窗体或窗体id
+  hideOpts:
+    type: Object
+    note: Webview窗口关闭的动画参数 aniHide：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose'>[参考]</a>动画类型 duration：动画持续时间，Number，单位ms
+    required: false
+code: |        
+  // String
+  $api.hideWindow('demo_setting',{
+    duration:200,
+    aniHide:'slide-out-right'
+  })    
+  // Object
+  $api.hideWindow($api.currentWebview(),{
+    duration:200,
+    aniHide:'slide-out-right'
+  })
+changes:
+  v1.1.0:
+    - '[change] 新增'

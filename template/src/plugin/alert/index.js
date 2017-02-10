@@ -27,44 +27,55 @@ const plugin = {
       document.body.appendChild($vm.$el)
     }
 
-    const closeHandler = function () {
-      $vm.showValue === true && ($vm.showValue = false)
-    }
-
-    const show = (msg, options) => {
-      options = options || {}
-      if (options.nativeFirst === true) {
+    const show = (msg, opts) => {
+      opts = opts || {}
+      if (opts.nativeFirst === true) {
         nativeFirst = true
+      } else {
+        nativeFirst = false
       }
       if (nativeFirst) {
         // 优先使用原生
-        nShow(msg, options)
+        nShow(msg, opts)
       } else {
-        if (typeof options === 'object') {
+        options.addMsgBack({
+          name: 'alert',
+          index: 50,
+          handle: function () {
+            // options.log('alert back')
+            if ($vm.showValue === true) {
+              hide()
+              return false
+            }
+            return true
+          }
+        })
+        if (typeof opts === 'object') {
           // 弹窗标题
-          if (options.title && !msg) {
-            msg = options.title
-            options.title = ''
+          if (opts.title && !msg) {
+            msg = opts.title
+            opts.title = ''
           } else {
-            options.title = ''
+            opts.title = ''
           }
           // 按钮文字
-          options.buttonText = options.buttonText || '确定'
+          opts.buttonText = opts.buttonText || '确定'
           // 遮罩动画
-          options.maskTransition = options.maskTransition || 'vux-fade'
+          opts.maskTransition = opts.maskTransition || 'vux-fade'
           // 弹窗主体动画
-          options.dialogTransition = options.dialogTransition || 'vux-dialog'
+          opts.dialogTransition = opts.dialogTransition || 'vux-dialog'
 
-          options.onShow = options.onShow || (() => {})
-          options.onHide = options.onHide || (() => {})
-          for (let i in options) {
-            $vm[i] = options[i]
+          opts.onShow = opts.onShow || (() => {})
+          opts._onHide = opts.onHide || (() => {})
+          opts.onHide = hide
+
+          for (let i in opts) {
+            $vm[i] = opts[i]
           }
         }
         // 内容，支持 html，和默认slot同样功能
         $vm.$el.querySelector('.weui_dialog_bd').innerHTML = msg
-        $vm.$el.querySelector('.weui_dialog_ft').addEventListener('click', closeHandler, false)
-        options.onShow && options.onShow($vm)
+        opts.onShow && opts.onShow($vm)
         $vm.showValue = true
       }
     }
@@ -73,8 +84,9 @@ const plugin = {
         // 优先使用原生
         nHide()
       } else {
-        $vm.showValue = false
-        $vm.onHide && $vm.onHide($vm)
+        options.removeMsgBack('alert', 50)
+        $vm.showValue === true && ($vm.showValue = false)
+        $vm._onHide && $vm._onHide($vm)
       }
     }
     vue.mixin({

@@ -87,10 +87,10 @@ $api.alert('消息123',{
   title:'标题',
   buttonText:'知道了',
   onShow:()=>{
-    console.log('onShow')
+    console.log('alert onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('alert onHide')
   }
 })
 
@@ -233,16 +233,16 @@ $api.confirm('消息123',{
   confirmText:'YES',
   cancelText:'NO',
   onShow:()=>{
-    console.log('onShow')
+    console.log('confirm onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('confirm onHide')
   },
   onConfirm:()=>{
-    console.log('确定')
+    console.log('confirm 确定')
   },
   onCancel:()=>{
-    console.log('取消')
+    console.log('confirm 取消')
   }
 })
 
@@ -358,6 +358,7 @@ Vue组件模式、H5+模式 可用
 | onShow | <span class="type type-function">Function</span> | <span class="type type-false">No</span> | 提示前执行方法 |
 | onHide | <span class="type type-function">Function</span> | <span class="type type-false">No</span> | 提示关闭后执行方法 |
 | position | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 【Vue组件】定位方式，默认为absolute，在100%的布局下用absolute可以避免抖动 |
+| nativeFirst | <span class="type type-boolean">Boolean</span> | <span class="type type-false">No</span> | 【Vue组件】是否优先使用原生的，默认值false |
 
 
 <br>
@@ -375,10 +376,10 @@ $api.loading('消息123')
 // 完整示例 
 $api.loading('消息123',{
   onShow:()=>{
-    console.log('onShow')
+    console.log('loading onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('loading onHide')
   }
 })
 
@@ -437,6 +438,140 @@ $api.loadingClose()
 
 <span class="vux-params-property"> v1.0.1</span>
  <ul><li><span style="font-size:14px;"><span class="change change-change">change</span>  从loading中分离出来loadingClose</span></li></ul>
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>login</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">login([reload,options])</b><br><br>登录层
+
+
+<p class="tip">Vue组件模式下可用
+</p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[reload]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-boolean">Boolean</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>登录后是否需要重新载入来源页，默认值：true</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[options]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-function">Function</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>登录成功的回调</code>
+
+<br>
+
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// 简单示例 
+$api.login()
+// 完整示例 
+$api.login(false,()=>{
+    alert('登录成功')
+})
+
+```
+
+<br><span class="vux-method-title">日志</span>
+
+<br>
+
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>loginCancle</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">loginCancle()</b><br><br>取消登录（未登录关闭）
+
+
+<p class="tip">Vue组件模式下可用
+</p>
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// 示例 
+$api.loginCancle()
+
+```
+
+<br><span class="vux-method-title">日志</span>
+
+<br>
+
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>loginClose</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">loginClose()</b><br><br>关闭登录层（登录成功）
+
+
+<p class="tip">Vue组件模式下可用
+</p>
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// 示例 
+$api.loginClose()
+
+```
+
+<br><span class="vux-method-title">日志</span>
+
+<br>
+
+<span class="vux-params-property"> v1.1.0</span>
+ <ul><li><span style="font-size:14px;"><span class="change change-feature">feature</span>  新增：调用Vue组件，实现！</span></li></ul>
 <br>
 
  ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>toast</span>
@@ -522,10 +657,10 @@ $api.toast('消息123')
 $api.toast('消息123',{
   time:2000,
   onShow:()=>{
-    console.log('onShow')
+    console.log('toast onShow')
   },
   onHide:()=>{
-    console.log('onHide')
+    console.log('toast onHide')
   }
 })
 

@@ -1,7 +1,10 @@
+'use strict'
+
 var path = require('path')
 var config = require('../build/config')
 var dir = require('./base/dir')
 var utils = require('./utils')
+var merge = require('webpack-merge')
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide whether to enable CSS source maps for the
@@ -103,10 +106,24 @@ var webpackConfig = {
 
 // vux
 const vuxLoader = require('vux-loader')
+
 module.exports = vuxLoader.merge(webpackConfig, {
   options: {},
   plugins: [{
     name: 'vux-ui'
+  }, {
+    name: 'script-parser',
+    fn: function (source) {
+      return _parser(source)
+    }
+  }, {
+    name: 'js-parser',
+    test: /entry\.js/,
+    fn: function (source) {
+      return _parser(source)
+    }
+  }, {
+    name: 'inline-manifest'
   }, {
     name: 'duplicate-style'
   }, {
@@ -125,8 +142,25 @@ config(Vue)
 const FastClick = require('fastclick')
 FastClick.attach(document.body)
 `)
-      console.log(source)
+      // console.log(source)
       return source
     }
   }]
 })
+
+const maps = require('../src/components/map.json')
+const parser = require('./base/import-parser')
+
+function _parser(source) {
+  if (/}\s+from(.*?)'app'/.test(source)) {
+    source = parser(source, function (opts) {
+      let str = ''
+      opts.components.forEach(function (component) {
+        let file = `${maps[component.originalName]}`
+        str += `import ${component.newName} from '${file}'\n`
+      })
+      return str
+    }, 'app')
+  }
+  return source
+}

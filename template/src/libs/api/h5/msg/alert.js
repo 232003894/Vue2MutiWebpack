@@ -1,5 +1,5 @@
 /**
- * 这里放调用window的 confirm
+ * 这里放调用window的 alert
  * 消息方法
  */
 

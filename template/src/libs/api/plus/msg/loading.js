@@ -29,22 +29,21 @@ if (os.plus) {
       let waitingSize = bodyFontSize.replace('px', '') * 1 * 7.875 + 'px'
       window.plus && window.plus.nativeUI.showWaiting(msg, {
         modal: true,
-        back: 'none',
         round: '10px',
         width: waitingSize,
         height: waitingSize,
         size: bodyFontSize,
         padding: '10px',
         background: 'rgba(0,0,0,0.8)',
-        color: '#fff'
+        color: '#fff',
+        back: 'transmit'
       })
     } else {
-      utils.log('toast无内容,退出')
+      utils.log('loading无内容,退出')
     }
   }
   loadingClose = () => {
     window.plus && window.plus.nativeUI.closeWaiting()
     loadingonHide()
-    loadingonHide = () => {}
   }
 }

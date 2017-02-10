@@ -9,6 +9,10 @@ args:
   callback:
     type: Function
     note: 窗体
+  inRefresh:
+    type: Boolean
+    note: 默认值:false,是否需要加入刷新列表中,提供给refresh使用
+    required: false
 return:
   type: Object
   note: $api对象
@@ -17,3 +21,5 @@ code: |
     console.log('页面加载完成')
   })
 changes:
+  v1.1.0:
+    - '[change] 新增"inRefresh"参数，表示是否要加入业务刷新列表中，默认值false'

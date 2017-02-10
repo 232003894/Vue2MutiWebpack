@@ -54,10 +54,10 @@ code: |
   $api.toast('消息123',{
     time:2000,
     onShow:()=>{
-      console.log('onShow')
+      console.log('toast onShow')
     },
     onHide:()=>{
-      console.log('onHide')
+      console.log('toast onHide')
     }
   })
 changes:

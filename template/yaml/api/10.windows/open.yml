@@ -29,7 +29,7 @@ args:
         required: false
       showOpts:
         type: Object
-        note: Webview窗口显示动画参数,aniShow:动画类型,duration:动画持续时间
+        note: Webview窗口显示动画参数<br>aniShow：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow'>[参考]</a>动画类型<br>duration：动画持续时间，Number，单位ms
         required: false
 code: |        
   $api.open('demo_setting', {

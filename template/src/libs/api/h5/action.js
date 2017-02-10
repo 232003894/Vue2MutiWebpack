@@ -87,7 +87,7 @@ export function addAction(type, hook) {
       return a.index - b.index
     })
   } else {
-    utils.log(type + '类型' + hook.name || '' + '重复的action,覆盖旧的')
+    utils.log(type + '类型重复的' + (hook.name || '') + 'action,覆盖旧的')
     _hooks[_index] = hook
   }
 
@@ -145,20 +145,24 @@ export function actionCount(type, name, index) {
   if (index !== undefined) {
     _attrs.push('index')
   }
+  let _hooks = hooks[type]
+  if (!_hooks) {
+    _hooks = []
+  }
   if (_attrs.length > 0) {
     let hook = {
       name: name,
       index: index
     }
-    if (hooks[type] && utils.isArray(hooks[type])) {
-      hooks[type].forEach(function (_hook, i) {
+    if (_hooks && utils.isArray(_hooks)) {
+      _hooks.forEach(function (_hook, i) {
         if (utils.equals(hook, _hook, _attrs.join(','))) {
           count++
         }
       })
     }
   } else {
-    count = hooks[type].length
+    count = _hooks.length
   }
   return count
 }

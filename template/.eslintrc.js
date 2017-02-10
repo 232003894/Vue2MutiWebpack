@@ -14,6 +14,7 @@ module.exports = {
   ],
   "globals": {
     "plus": true,
+    "alert": true,
     "$api": true
   },
   // add your custom rules here

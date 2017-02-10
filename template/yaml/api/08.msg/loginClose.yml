@@ -1,0 +1,15 @@
+tags:
+  - Dialog
+  - 组件扩展
+name: loginClose
+filetype: method
+note: |
+  关闭登录层（登录成功）
+tip: |
+  Vue组件模式下可用
+code: |        
+  // 示例 
+  $api.loginClose()
+changes:
+  v1.1.0:
+    - '[feature] 新增：调用Vue组件，实现！'

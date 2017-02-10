@@ -187,7 +187,10 @@ export {
   onload,
   mounted,
   refresh,
-  showWindow
+  webError,
+  showWindow,
+  hideWindow,
+  closeWindow
 }
 from './plus/windows.js'
 

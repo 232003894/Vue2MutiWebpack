@@ -15,7 +15,10 @@ args:
     required: false
     note: 是否先执行msg类型的关闭(常用于安卓后退按键的后退),默认值false
 code: |    
+  // 直接后退
   $api.back()
+  // 如果有msg先关闭msg
+  $api.back(true)
 changes:
   v1.0.1:
     - '[change] 合并了backWithMsg方法,通过closeMsg参数'

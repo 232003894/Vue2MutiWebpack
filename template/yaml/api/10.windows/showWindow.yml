@@ -9,18 +9,24 @@ warn: |
   只针对H5+
 args:
   webview:
-    type: Object
-    note: 窗体
+    type: Object|String
+    note: plus窗体或窗体id
   showLoading:
     type: Boolean
-    note: 是否显示等待对话框
+    note: 是否显示等待对话框，默认值true
     required: false
   showOpts:
     type: Object
-    note: Webview窗口显示动画参数,aniShow:动画类型,duration:动画持续时间
+    note: Webview窗口显示动画参数 aniShow：<a target='_blank' href='http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow'>[参考]</a>动画类型 duration：动画持续时间，Number，单位ms
     required: false
 code: |        
+  // String
   $api.showWindow('demo_setting',true,{
+    duration:200,
+    aniShow:'slide-in-right'
+  })    
+  // Object
+  $api.showWindow(webview,true,{
     duration:200,
     aniShow:'slide-in-right'
   })

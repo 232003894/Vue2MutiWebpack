@@ -2,12 +2,14 @@ tags:
   - 窗体
   - H5Plus扩展
 name: isHomePage
-filetype: attr
+filetype: method
 note: |
   是否主页
 warn: |
   只针对H5+
-type: Boolean
 code: | 
-  $api.isHomePage
+  $api.isHomePage()
+return: 
+  type: Boolean
+  note: 是否主页
 changes:

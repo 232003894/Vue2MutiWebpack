@@ -174,7 +174,10 @@ back的hooks中则更加index的顺序来执行,一般情况下是先 h5+的back
 <br>
 
 ``` js
+// 直接后退
 $api.back()
+// 如果有msg先关闭msg
+$api.back(true)
 
 ```
 

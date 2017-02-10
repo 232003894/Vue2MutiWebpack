@@ -33,10 +33,10 @@ moduleExports.libsDir = path.resolve(moduleExports.srcRootDir, './libs')
 moduleExports.componentsDir = path.resolve(moduleExports.srcRootDir, './components')
 
 // 存放自定义的通用VUE组件
-moduleExports.pubsComponentsDir = path.resolve(moduleExports.srcRootDir, './components/pubs')
+// moduleExports.pubsComponentsDir = path.resolve(moduleExports.srcRootDir, './components/pubs')
 
 // 存放自定义的业务VUE组件
-moduleExports.businessComponentsDir = path.resolve(moduleExports.srcRootDir, './components/business')
+// moduleExports.businessComponentsDir = path.resolve(moduleExports.srcRootDir, './components/business')
 
 /**
  * 生成文件目录

@@ -35,6 +35,9 @@ args:
       position:
         type: String
         note: 【Vue组件】定位方式，默认为absolute，在100%的布局下用absolute可以避免抖动
+      nativeFirst:
+        type: Boolean
+        note: 【Vue组件】是否优先使用原生的，默认值false
 code: |        
   // 简单示例 msg
   $api.loading()
@@ -43,10 +46,10 @@ code: |
   // 完整示例 
   $api.loading('消息123',{
     onShow:()=>{
-      console.log('onShow')
+      console.log('loading onShow')
     },
     onHide:()=>{
-      console.log('onHide')
+      console.log('loading onHide')
     }
   })
 changes:

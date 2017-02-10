@@ -15,11 +15,11 @@ if (os.plus) {
   androidKeys = () => {
     if (window.plus && os.android) {
       // back
-      plus.key.removeEventListener('backbutton', back.back, false)
-      plus.key.addEventListener('backbutton', back.back, false)
+      plus.key.removeEventListener('backbutton', back.__back, false)
+      plus.key.addEventListener('backbutton', back.__back, false)
       // menu
-      plus.key.removeEventListener('menubutton', back.menu, false)
-      plus.key.addEventListener('menubutton', back.menu, false)
+      plus.key.removeEventListener('menubutton', back.__menu, false)
+      plus.key.addEventListener('menubutton', back.__menu, false)
     }
   }
 

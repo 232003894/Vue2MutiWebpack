@@ -64,16 +64,16 @@ code: |
     confirmText:'YES',
     cancelText:'NO',
     onShow:()=>{
-      console.log('onShow')
+      console.log('confirm onShow')
     },
     onHide:()=>{
-      console.log('onHide')
+      console.log('confirm onHide')
     },
     onConfirm:()=>{
-      console.log('确定')
+      console.log('confirm 确定')
     },
     onCancel:()=>{
-      console.log('取消')
+      console.log('confirm 取消')
     }
   })
 changes:

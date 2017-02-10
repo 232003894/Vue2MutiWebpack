@@ -12,6 +12,8 @@ import {
   os
 } from './os.js'
 import * as utils from '../h5/utils.js'
+
+// 窗体操作的loading效果专门使用plus的loading
 import {
   // 显示等待对话框
   loading,
@@ -20,16 +22,19 @@ import {
 }
 from './msg/loading.js'
 
-import * as _windows from '../h5/windows.js'
+import * as win from '../h5/windows.js'
 
-export var currentWebview = _windows.currentWebview
-export var isHomePage = _windows.isHomePage
-export var open = _windows.open
-export var goHome = _windows.goHome
-export var onload = _windows.onload
-export var mounted = _windows.mounted
-export var refresh = _windows.refresh
-export var showWindow = _windows.showWindow
+export var currentWebview = win.currentWebview
+export var isHomePage = win.isHomePage
+export var open = win.open
+export var goHome = win.goHome
+export var onload = win.onload
+export var mounted = win.mounted
+export var refresh = win.refresh
+export var webError = win.webError
+export var showWindow = win.showWindow
+export var hideWindow = win.hideWindow
+export var closeWindow = win.closeWindow
 
 const loadingTitle = '载入中'
 // 默认打开窗口样式配置
@@ -42,28 +47,92 @@ const defaultShow = {
   duration: os.ios ? 300 : 200,
   aniShow: 'slide-in-right'
 }
+// 默认窗口隐藏配置
+const defaultHide = {
+  duration: os.ios ? 300 : 200,
+  aniHide: 'slide-out-right'
+}
 let _refreshs = []
 
+let _currentWebview = null
+
 if (os.plus) {
+  currentWebview = () => {
+    if (window.plus && _currentWebview === null) {
+      _currentWebview = plus.webview.currentWebview()
+    } else {
+      _currentWebview = null
+    }
+    return _currentWebview
+  }
+
+  isHomePage = () => {
+    if (window.plus) {
+      return currentWebview().id === window.plus.runtime.appid
+    } else {
+      return win.isHomePage
+    }
+  }
   /**
    * 显示指定窗口
    * @export
    * @param {any} webview
-   * @param {any} showLoading
+   * @param {Boolean} showLoading 默认值true
    */
   showWindow = (webview, showLoading, showOpts) => {
-    if (showLoading !== false) {
-      loading(loadingTitle, {
-        onShow: () => {
-          setTimeout(() => {
-            loadingClose()
-          }, os.ios ? 600 : 500)
+    if (window.plus) {
+      if (utils.isString(webview)) {
+        webview = plus.webview.getWebviewById(webview)
+      }
+      if (webview) {
+        if (showLoading !== false) {
+          loading(loadingTitle, {
+            onShow: () => {
+              setTimeout(() => {
+                loadingClose()
+              }, os.ios ? 1000 : 900)
+            }
+          })
         }
-      })
+        showOpts = utils.mix(true, defaultShow, showOpts)
+        // console.log(showOpts)
+        fireTree(webview, 'manualshow', showOpts)
+      } else {
+        utils.log('窗体不存在!')
+        return
+      }
+    } else {
+      utils.log(os.name + ' 环境 不支持 ' + 'showWindow ' + '!')
+      return
     }
-    showOpts = utils.mix(true, defaultShow, showOpts)
-    console.log(showOpts)
-    fireTree(webview, 'manualshow', showOpts)
+  }
+
+  /**
+   * 隐藏指定窗口
+   * @export
+   * @param {any} webview
+   */
+  hideWindow = (webview, hideOpts) => {
+    if (window.plus) {
+      hideOpts = utils.mix(true, defaultHide, hideOpts)
+      plus.webview.hide(webview, hideOpts.aniHide, hideOpts.duration)
+    } else {
+      utils.log(os.name + ' 环境 不支持 ' + 'hideWindow ' + '!')
+    }
+  }
+
+  /**
+   * 关闭指定窗口
+   * @export
+   * @param {any} webview
+   */
+  closeWindow = (webview, hideOpts) => {
+    if (window.plus) {
+      hideOpts = utils.mix(true, defaultHide, hideOpts)
+      plus.webview.close(webview, hideOpts.aniHide, hideOpts.duration)
+    } else {
+      utils.log(os.name + ' 环境 不支持 ' + 'closeWindow ' + '!')
+    }
   }
 
   /**
@@ -92,11 +161,12 @@ if (os.plus) {
       webview = plus.webview.getWebviewById(id)
       if (webview) {
         // 显示已存在窗口
+        console.log('显示已存在窗口')
         loading(loadingTitle, {
           onShow: () => {
             setTimeout(() => {
               loadingClose()
-            }, os.ios ? 1100 : 1000)
+            }, os.ios ? 1000 : 900)
           }
         })
         setTimeout(() => {
@@ -127,11 +197,11 @@ if (os.plus) {
       setTimeout(() => {
         loadingClose()
         setTimeout(() => {
-          top.close(defaultShow.aniShow.replace('in', 'out'), defaultShow.duration + 100)
+          top.close(defaultHide.aniHide, defaultHide.duration + 100)
         }, 100)
       }, 300)
     } else {
-      _windows.open('index')
+      win.open('index')
     }
   }
 }

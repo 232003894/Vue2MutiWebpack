@@ -55,10 +55,10 @@ code: |
     title:'标题',
     buttonText:'知道了',
     onShow:()=>{
-      console.log('onShow')
+      console.log('alert onShow')
     },
     onHide:()=>{
-      console.log('onHide')
+      console.log('alert onHide')
     }
   })
 changes:

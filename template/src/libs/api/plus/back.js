@@ -10,6 +10,13 @@ export var back = _back.back
 export var plusBack = _back.plusBack
 export var menu = _back.menu
 
+export function __back() {
+  back(true)
+}
+export function __menu() {
+  menu()
+}
+
 import {
   fire
 } from '../h5/event.js'
@@ -38,9 +45,7 @@ function closeWebView(wobj) {
       __backFirst = new Date().getTime()
       // 特别只使用plus,而不用 $api.toast
       // 主要是plus.nativeUI.toast可以穿透所有窗口
-      window.plus.nativeUI.toast('再按一次退出应用', {
-        verticalAlign: 'bottom'
-      })
+      window.plus.nativeUI.toast('再按一次退出应用')
       setTimeout(function () {
         __backFirst = null
       }, 2000)
@@ -83,7 +88,7 @@ if (os.plus) {
   })
 
   plusBack = () => {
-    console.log('plusBack')
+    // console.log('plusBack')
     if (window.plus) {
       var wobj = window.plus.webview.currentWebview()
       var parent = wobj.parent()
