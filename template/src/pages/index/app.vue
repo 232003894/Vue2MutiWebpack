@@ -258,7 +258,7 @@
         $api.webError()
       },
       test() {
-        $api.toast('测试')
+        $api.toast('Header Title Click 测试')
       }
     }
   }

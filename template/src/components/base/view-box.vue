@@ -76,9 +76,10 @@
     padding-bottom: 0;
   }
 </style>
-
 <style lang="less">
   @import '~vux/src/styles/weui/widget/weui_tab/weui_tab_tabbar';
+</style>
+<style lang="less">
   html,
   body {
     overflow-y: hidden;
