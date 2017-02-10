@@ -25,6 +25,13 @@ $ npm run dev
   - 拷贝生成文件到指定目录.
   - chrome打开`html/index.html`页面.
 
+- `npm run build+`: 生成发布（不压缩js）.
+  - HTML 压缩  [html-minifier](https://github.com/kangax/html-minifier).
+  - CSS从组件中提取并压缩 [cssnano](https://github.com/ben-eb/cssnano).
+  - 拷贝生成文件到指定目录.
+  - chrome打开`html/index.html`页面.
+
+
 - `npm run build-docs`: 生成文档.
   - yaml文件.
   - 文档是用[Docute](https://docute.js.org/#/zh-Hans/)编写的
