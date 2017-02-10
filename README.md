@@ -22,13 +22,10 @@ $ npm run dev
   - JavaScript压缩 [UglifyJS](https://github.com/mishoo/UglifyJS2).
   - CSS从组件中提取并压缩 [cssnano](https://github.com/ben-eb/cssnano).
   - 拷贝生成文件到指定目录.
-  - chrome打开`html/index.html`页面.
 
 - `npm run build+`: 生成发布（不压缩js）.
   - CSS从组件中提取并压缩 [cssnano](https://github.com/ben-eb/cssnano).
   - 拷贝生成文件到指定目录.
-  - chrome打开`html/index.html`页面.
-
 
 - `npm run build-docs`: 生成文档.
   - yaml文件.
