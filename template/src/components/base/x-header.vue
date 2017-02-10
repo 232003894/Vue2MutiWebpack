@@ -1,12 +1,12 @@
 <template>
   <div class="vux-header">
     <div class="vux-header-left">
-      <a class="vux-header-back" @click.preventDefault v-show="leftOptions.showBack!==false" :transition="transition" @click="onClickBack">{{leftOptions.backText}}</a>
+      <a class="vux-header-back" @click.preventDefault v-show="leftOptions.showBack!==false" :transition="transition" @click="onClickBack">\{{leftOptions.backText}}</a>
       <div class="left-arrow" @click="onClickBack" v-show="leftOptions.showBack!==false" :transition="transition"></div>
       <slot name="left"></slot>
     </div>
     <h1 class="vux-header-title" @click="$emit('on-click-title')">
-      <span v-show="title" :transition="transition">{{title}}</span>
+      <span v-show="title" :transition="transition">\{{title}}</span>
       <slot></slot>
     </h1>
     <div class="vux-header-right">

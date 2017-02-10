@@ -87,7 +87,7 @@
           </flexbox-item>
         </flexbox>
       </div>
-      <p v-for="i in 40">{{i}}</p>
+      <p v-for="i in 40">\{{i}}</p>
       <tabbar icon-class="vux-center" slot="bottom">
         <tabbar-item>
           <span slot="label">底部</span>

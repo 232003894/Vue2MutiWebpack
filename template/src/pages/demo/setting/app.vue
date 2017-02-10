@@ -24,7 +24,7 @@
         <flexbox-item>
         </flexbox-item>
       </flexbox>
-      <p v-for="i in 100">{{i}}</p>
+      <p v-for="i in 100">\{{i}}</p>
   </div>
   </view-box>
 </template>

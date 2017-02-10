@@ -2,7 +2,7 @@
   <div class="vux-x-input weui_cell" :class="{'weui_cell_warn': !valid}">
     <div class="weui_cell_hd">
       <label class="weui_label" :style="{width: $parent.labelWidth || (labelWidth + 'em'), textAlign: $parent.labelAlign, marginRight: $parent.labelMarginRight}" v-if="title" v-html="title"></label>
-      <inline-desc v-if="inlineDesc">{{inlineDesc}}</inline-desc>
+      <inline-desc v-if="inlineDesc">\{{inlineDesc}}</inline-desc>
     </div>
     <div class="weui_cell_bd weui_cell_primary">
       <input v-if="!type || type === 'text'" class="weui_input" :maxlength="max" :autocomplete="autocomplete" :autocapitalize="autocapitalize" :autocorrect="autocorrect" :spellcheck="spellcheck" :style="inputStyle" type="text" :name="name" :pattern="pattern"
