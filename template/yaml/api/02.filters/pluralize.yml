@@ -25,9 +25,9 @@ return:
   note: 转换后的字符串
 code: |   
   // vue filters
-  <p>{{ str | pluralize }}</p>
-  <p>{{ str | pluralize(1) }}</p>
-  <p>{{ str | pluralize(1,true) }}</p>
+  <p>\{{ str | pluralize }}</p>
+  <p>\{{ str | pluralize(1) }}</p>
+  <p>\{{ str | pluralize(1,true) }}</p>
 
   // js调用
   $api.pluralize('test') //=> "tests" 

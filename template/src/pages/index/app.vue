@@ -5,11 +5,11 @@
         头部
       </x-header>
       <img src="../../assets/img/logo.png">
-      <p>{{ date | formatDate('yy-MM-dd') }}</p>
-      <p>{{ str | capitalize }}</p>
-      <p>{{ money | currency({thousand:''}) }}</p>
-      <p>{{ money | number({thousand:' '}) }}</p>
-      <p>{{ json | json.read }}</p>
+      <p>\{{ date | formatDate('yy-MM-dd') }}</p>
+      <p>\{{ str | capitalize }}</p>
+      <p>\{{ money | currency({thousand:''}) }}</p>
+      <p>\{{ money | number({thousand:' '}) }}</p>
+      <p>\{{ json | json.read }}</p>
       <br>
       <div>
         <flexbox>
@@ -92,7 +92,7 @@
           </flexbox-item>
         </flexbox>
       </div>
-      <p v-for="i in 40">{{i}}</p>
+      <p v-for="i in 40">\{{i}}</p>
       <tabbar icon-class="vux-center" slot="bottom">
         <tabbar-item>
           <span slot="label">底部</span>

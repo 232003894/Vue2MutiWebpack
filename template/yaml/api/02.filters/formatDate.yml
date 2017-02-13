@@ -54,7 +54,7 @@ return:
   note: 日期字符串
 code: |   
   // vue filters
-  <p>{{ date | formatDate('yyyy-MM-dd') }}</p>
+  <p>\{{ date | formatDate('yyyy-MM-dd') }}</p>
 
   // js调用
   var d = new Date()

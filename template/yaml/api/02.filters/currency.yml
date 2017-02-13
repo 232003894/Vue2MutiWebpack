@@ -35,8 +35,8 @@ return:
   note: 转换后的数字
 code: |   
   // vue filters
-  <p>{{ num | currency }}</p>
-  <p>{{ num |currency({precision:3}) }}</p>
+  <p>\{{ num | currency }}</p>
+  <p>\{{ num |currency({precision:3}) }}</p>
 
   // js调用
   $api.currency(1222.615) //=>"¥1,222.62"
