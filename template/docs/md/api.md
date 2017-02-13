@@ -826,6 +826,72 @@ $api.mix({title:'dd',id:123},[1,1,2])
 ```
 <br>
 
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>toFixed</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">toFixed(value,[precision])</b><br><br>把 Number 四舍五入为指定小数位数的数字<br>
+参考：http://openexchangerates.github.io/accounting.js/#methods
+
+
+<p class="tip">解决原生js toFixed 四舍五入的问题 <br/>
+(0.615).toFixed(2) // "0.61" <br/>
+$api.toFixed(0.615, 2) // "0.62"
+</p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>需要四舍五入的数字</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[precision]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>小数位的精度，几位小数</code>
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-number">Number</span>
+
+- 说明：四舍五入后的数字
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// 2位精度
+$api.toFixed(0.615, 2) // "0.62"
+
+```
+<br>
+
  ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>tpl</span>
 
 
@@ -888,11 +954,11 @@ $api.tpl('最少输入{#minlength#}个字',{'minlength': 12})
 ```
 <br>
 
- ## <span class="vux-group-name"><i class="iconfontDoc">&#xe62b;</i><span style="display:none"> </span>Date </span>
+ ## <span class="vux-group-name"><i class="iconfontDoc">&#xe62b;</i><span style="display:none"> </span>Filter </span>
 
 
 
- ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>dateFormat</span>
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>capitalize</span>
 
 
  ------------ 
@@ -901,7 +967,140 @@ $api.tpl('最少输入{#minlength#}个字',{'minlength': 12})
 
  <br> 
 
- > <b style="color:blue">dateFormat(date,[format])</b><br><br>对日期进行格式化，目标可能是符合一定格式的字符串，数值，或Date对象。<br>
+ > <b style="color:blue">capitalize(value)</b><br><br>字符串格式化，首字母大写：'abc' => 'Abc'
+
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-string">String</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>带转换的字符串</code>
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-string">String</span>
+
+- 说明：转换后的字符串
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// vue filters
+<p>{{ str | capitalize }}</p>
+
+// js调用
+var str = 'abc'
+$api.capitalize(str)
+
+```
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>currency</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">currency(value,[opts])</b><br><br>货币格式化
+参考：http://openexchangerates.github.io/accounting.js/#methods
+
+
+<p class="tip">解决原生js toFixed 四舍五入的问题 
+</p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>待处理的数字</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[opts]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>选项</code>
+
+<br>
+
+ <pre style="display:none;"></pre> 
+
+
+| 字段   | 类型 | 必填    | 说明   |
+|-------|-------|-------|-------|
+| symbol | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 货币符号，默认值：'¥' |
+| precision | <span class="type type-number">Number</span> | <span class="type type-false">No</span> | 位数精度，默认值：2 |
+| thousand | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 千分位符号，默认值：','，如果''表示不要千分位符号 |
+| decimal | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 小数点服务号，默认值：'.' |
+
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-number">Number</span>
+
+- 说明：转换后的数字
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// vue filters
+<p>{{ num | currency }}</p>
+<p>{{ num |currency({precision:3}) }}</p>
+
+// js调用
+$api.currency(1222.615) //=>"¥1,222.62"
+$api.currency(1222.615,{precision:3) //=>"¥1,222.615"
+
+```
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>formatDate</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">formatDate(date)</b><br><br>对日期进行格式化，目标可能是符合一定格式的字符串，数值，或Date对象。<br>
 显示一个用户必须注意到并且必须点击按钮确认才能关闭的信息<br>
 format 格式化说明
 </p>
@@ -941,7 +1140,7 @@ format 格式化说明
 <p>
 
 
-<p class="tip">参考的 avalon date过滤器
+<p class="tip">参考的 avalon date过滤器：http://avalonjs.coding.me/filter.html#date
 </p>
 
 <br><span class="vux-method-title">参数：</span>
@@ -953,7 +1152,7 @@ format 格式化说明
 
 <br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-date">Date</span> <span class="type type-string">String</span> <span class="type type-number">Number</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-string">String</span>
 
 <br>
 
@@ -962,24 +1161,21 @@ format 格式化说明
 <br>
 
 
-<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[format]</span>
+<br><span class="vux-method-title">返回值：</span>
 
-<br>
+- 类型：<span class="type type-string">String</span>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-string">String</span>
-
-<br>
-
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>默认值 'yyyy-M-d',其他参考上面的表格</code>
-
-<br>
-
+- 说明：日期字符串
 
 <br><span class="vux-method-title">示例：</span>
 
 <br>
 
 ``` js
+// vue filters
+<p>{{ date | formatDate('yyyy-MM-dd') }}</p>
+
+// js调用
 var d = new Date()
 $api.dateFormat(d,"yyyy-MM-dd HH:mm:ss")
 
@@ -1011,6 +1207,274 @@ $api.dateFormat(d,"yyyy-MM-dd HH:mm:ss")
 //这是ASP.NET输出的JSON数据的日期格式
 var d = '\/Date(1373021259229)\/'
 $api.dateFormat(d,"yyyy-MM-dd HH:mm:ss") 
+
+```
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>lowercase</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">lowercase(value)</b><br><br>字符串格式化，小写：'AbC' => 'abc'
+
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-string">String</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>带转换的字符串</code>
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-string">String</span>
+
+- 说明：转换后的字符串
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// vue filters
+<p>{{ str | lowercase }}</p>
+
+// js调用
+var str = 'AbC'
+$api.lowercase(str)
+
+```
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>number</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">number(value,[opts])</b><br><br>数字格式化
+参考：http://openexchangerates.github.io/accounting.js/#methods
+
+
+<p class="tip">解决原生js toFixed 四舍五入的问题 
+</p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>待处理的数字</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[opts]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-object">Object</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>选项</code>
+
+<br>
+
+ <pre style="display:none;"></pre> 
+
+
+| 字段   | 类型 | 必填    | 说明   |
+|-------|-------|-------|-------|
+| precision | <span class="type type-number">Number</span> | <span class="type type-false">No</span> | 位数精度，默认值：2 |
+| thousand | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 千分位符号，默认值：','，如果''表示不要千分位符号 |
+| decimal | <span class="type type-string">String</span> | <span class="type type-false">No</span> | 小数点服务号，默认值：'.' |
+
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-number">Number</span>
+
+- 说明：转换后的数字
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// vue filters
+<p>{{ num | number }}</p>
+<p>{{ num | number({precision:3}) }}</p>
+
+// js调用
+$api.number(1222.615) //=>"1,222.62"
+$api.number(1222.615,{precision:3) //=>"1,222.615"
+
+```
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>pluralize</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">pluralize(value,[count,inclusive])</b><br><br>单词复数
+
+
+<p class="tip">参考：https://www.npmjs.com/package/pluralize
+</p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-string">String</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>待处理的单词</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[count]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>次数</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[inclusive]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-boolean">Boolean</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>包含次数</code>
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-string">String</span>
+
+- 说明：转换后的字符串
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// vue filters
+<p>{{ str | pluralize }}</p>
+<p>{{ str | pluralize(1) }}</p>
+<p>{{ str | pluralize(1,true) }}</p>
+
+// js调用
+$api.pluralize('test') //=> "tests" 
+$api.pluralize('test, 1) //=> "test" 
+$api.pluralize('test', 5) //=> "tests" 
+$api.pluralize('test', 1, true) //=> "1 test" 
+$api.pluralize('test', 5, true) //=> "5 tests" 
+
+```
+<br>
+
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>uppercase</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">uppercase(value)</b><br><br>字符串格式化，大写：'abc' => 'ABC'
+
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-string">String</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>带转换的字符串</code>
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-string">String</span>
+
+- 说明：转换后的字符串
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// vue filters
+<p>{{ str | uppercase }}</p>
+
+// js调用
+var str = 'abc'
+$api.uppercase(str)
 
 ```
 <br>

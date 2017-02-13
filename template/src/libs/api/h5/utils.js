@@ -327,3 +327,12 @@ export function tpl(tplStr, data) {
 export function getStyle(domObj) {
   return domObj.currentStyle != null ? domObj.currentStyle : window.getComputedStyle(domObj, false)
 }
+
+var accounting = require('accounting')
+/**
+ * 把 Number 四舍五入为指定小数位数的数字
+ * @export
+ * @param {Number} value
+ * @returns {Number} precision
+ */
+export var toFixed = accounting.toFixed

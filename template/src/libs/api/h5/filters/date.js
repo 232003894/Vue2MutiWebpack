@@ -1,4 +1,4 @@
-import * as utils from './utils'
+import * as utils from '../utils'
 /*
  'yyyy': 4 digit representation of year (e.g. AD 1 => 0001, AD 2010 => 2010)
  'yy': 2 digit representation of year, padded (00-99). (e.g. AD 2001 => 01, AD 2010 => 10)
@@ -111,8 +111,8 @@ var DATE_FORMATS = {
 var rdateFormat = /((?:[^yMdHhmsaZE']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|d+|H+|h+|m+|s+|a|Z))(.*)/
 var raspnetjson = /^\/Date\((\d+)\)\/$/
 
-function dateFormat(date, format) {
-  var locate = dateFormat.locate
+function formatDate(date, format) {
+  var locate = formatDate.locate
   var text = ''
   var parts = []
   var fn
@@ -236,8 +236,8 @@ var locate = {
   shortTime: 'ah:mm'
 }
 locate.SHORTMONTH = locate.MONTH
-dateFormat.locate = locate
+formatDate.locate = locate
 
 export {
-  dateFormat
+  formatDate
 }

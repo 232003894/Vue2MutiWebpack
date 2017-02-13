@@ -1,0 +1,22 @@
+tags:
+  - Filter
+  - 通用
+  - Vue filter
+name: capitalize
+filetype: method
+note: |
+  字符串格式化，首字母大写：'abc' => 'Abc'
+args:
+  value:
+    type: String
+    note: 带转换的字符串
+return: 
+  type: String
+  note: 转换后的字符串
+code: |   
+  // vue filters
+  <p>{{ str | capitalize }}</p>
+
+  // js调用
+  var str = 'abc'
+  $api.capitalize(str)

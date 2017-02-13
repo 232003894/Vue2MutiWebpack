@@ -35,7 +35,8 @@ export {
   log,
   // 模板替换输出
   tpl,
-  style
+  getStyle,
+  toFixed
 }
 from './h5/utils'
 
@@ -44,9 +45,22 @@ from './h5/utils'
  */
 export {
   // 日期格式化
-  dateFormat
+  formatDate
 }
-from './h5/date'
+from './h5/filters/date'
+
+/**
+ * 日期
+ */
+export {
+  capitalize,
+  uppercase,
+  lowercase,
+  pluralize,
+  currency,
+  number
+}
+from './h5/filters'
 
 /**
  * 系统环境

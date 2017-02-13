@@ -1,0 +1,40 @@
+tags:
+  - Filter
+  - 通用
+  - Vue filter
+name: number
+filetype: method
+note: |
+  数字格式化
+  参考：http://openexchangerates.github.io/accounting.js/#methods
+tip: |
+  解决原生js toFixed 四舍五入的问题 
+args:
+  value:
+    type: Number
+    note: 待处理的数字
+  opts:
+    type: Object
+    note: 选项
+    required: false
+    fields:
+      precision:
+        type: Number
+        note: 位数精度，默认值：2
+      thousand:
+        type: String
+        note: 千分位符号，默认值：','，如果''表示不要千分位符号
+      decimal:
+        type: String
+        note: 小数点服务号，默认值：'.'
+return: 
+  type: Number
+  note: 转换后的数字
+code: |   
+  // vue filters
+  <p>{{ num | number }}</p>
+  <p>{{ num | number({precision:3}) }}</p>
+
+  // js调用
+  $api.number(1222.615) //=>"1,222.62"
+  $api.number(1222.615,{precision:3) //=>"1,222.615"

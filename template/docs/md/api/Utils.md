@@ -826,6 +826,72 @@ $api.mix({title:'dd',id:123},[1,1,2])
 ```
 <br>
 
+ ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>toFixed</span>
+
+
+ ------------ 
+
+<br><span class="vux-method-title">用法：</span>
+
+ <br> 
+
+ > <b style="color:blue">toFixed(value,[precision])</b><br><br>把 Number 四舍五入为指定小数位数的数字<br>
+参考：http://openexchangerates.github.io/accounting.js/#methods
+
+
+<p class="tip">解决原生js toFixed 四舍五入的问题 <br/>
+(0.615).toFixed(2) // "0.61" <br/>
+$api.toFixed(0.615, 2) // "0.62"
+</p>
+
+<br><span class="vux-method-title">参数：</span>
+
+<br>
+
+
+ <span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>value</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>需要四舍五入的数字</code>
+
+<br>
+
+
+<span class="vux-arg-title"><i class="iconfontDoc">&#xe62c;</i><span style="display:none"> </span>[precision]</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型： <span class="type type-number">Number</span>
+
+<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说明： <code>小数位的精度，几位小数</code>
+
+<br>
+
+
+<br><span class="vux-method-title">返回值：</span>
+
+- 类型：<span class="type type-number">Number</span>
+
+- 说明：四舍五入后的数字
+
+<br><span class="vux-method-title">示例：</span>
+
+<br>
+
+``` js
+// 2位精度
+$api.toFixed(0.615, 2) // "0.62"
+
+```
+<br>
+
  ### <span style="display:none;">　</span><span class="vux-root-name"><i class="iconfontDoc">&#xe65d;</i><span style="display:none"> </span>tpl</span>
 
 

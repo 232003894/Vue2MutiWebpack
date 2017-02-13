@@ -26,8 +26,8 @@ self.$config = {
           path: '/md/api/Utils.md'
         },
         {
-          title: 'Date',
-          path: '/md/api/Date.md'
+          title: 'Filter',
+          path: '/md/api/Filter.md'
         },
         {
           title: 'Env',

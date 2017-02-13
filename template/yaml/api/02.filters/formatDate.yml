@@ -1,7 +1,8 @@
 tags:
-  - Date
+  - Filter
   - 通用
-name: dateFormat
+  - Vue filter
+name: formatDate
 filetype: method
 note: |
   对日期进行格式化，目标可能是符合一定格式的字符串，数值，或Date对象。<br>
@@ -43,16 +44,19 @@ note: |
   
   <p>
 tip: |
-  参考的 avalon date过滤器
+  参考的 avalon date过滤器：http://avalonjs.coding.me/filter.html#date
 args:
   date:
-    type: date|string|number
+    type: String
     note: 符合一定格式的字符串，数值，或Date对象
-  format:
-    type: string
-    note: 默认值 'yyyy-M-d',其他参考上面的表格
-    required: false
+return: 
+  type: String
+  note: 日期字符串
 code: |   
+  // vue filters
+  <p>{{ date | formatDate('yyyy-MM-dd') }}</p>
+
+  // js调用
   var d = new Date()
   $api.dateFormat(d,"yyyy-MM-dd HH:mm:ss")
 
