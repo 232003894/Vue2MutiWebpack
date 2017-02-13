@@ -15,7 +15,7 @@ return:
   note: 转换后的字符串
 code: |   
   // vue filters
-  <p>\{{ str \| uppercase }}</p>
+  <p>\{{ str | uppercase }}</p>
 
   // js调用
   var str = 'abc'
