@@ -46,7 +46,7 @@
 
 ``` js
 // vue filters
-<p>\\{{ str \| capitalize }}</p>
+<p>\{{ str \| capitalize }}</p>
 
 // js调用
 var str = 'abc'
