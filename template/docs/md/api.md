@@ -1000,7 +1000,7 @@ $api.tpl('最少输入{#minlength#}个字',{'minlength': 12})
 
 ``` js
 // vue filters
-<p>\{{ str | capitalize }}</p>
+<p>\{{ str \| capitalize }}</p>
 
 // js调用
 var str = 'abc'
@@ -1081,8 +1081,8 @@ $api.capitalize(str)
 
 ``` js
 // vue filters
-<p>\{{ num | currency }}</p>
-<p>\{{ num |currency({precision:3}) }}</p>
+<p>\{{ num \| currency }}</p>
+<p>\{{ num \|currency({precision:3}) }}</p>
 
 // js调用
 $api.currency(1222.615) //=>"¥1,222.62"
@@ -1173,7 +1173,7 @@ format 格式化说明
 
 ``` js
 // vue filters
-<p>\{{ date | formatDate('yyyy-MM-dd') }}</p>
+<p>\{{ date 、| formatDate('yyyy-MM-dd') }}</p>
 
 // js调用
 var d = new Date()
@@ -1253,7 +1253,7 @@ $api.dateFormat(d,"yyyy-MM-dd HH:mm:ss")
 
 ``` js
 // vue filters
-<p>\{{ str | lowercase }}</p>
+<p>\{{ str \| lowercase }}</p>
 
 // js调用
 var str = 'AbC'
@@ -1333,8 +1333,8 @@ $api.lowercase(str)
 
 ``` js
 // vue filters
-<p>\{{ num | number }}</p>
-<p>\{{ num | number({precision:3}) }}</p>
+<p>\{{ num \| number }}</p>
+<p>\{{ num \| number({precision:3}) }}</p>
 
 // js调用
 $api.number(1222.615) //=>"1,222.62"
@@ -1414,9 +1414,9 @@ $api.number(1222.615,{precision:3) //=>"1,222.615"
 
 ``` js
 // vue filters
-<p>\{{ str | pluralize }}</p>
-<p>\{{ str | pluralize(1) }}</p>
-<p>\{{ str | pluralize(1,true) }}</p>
+<p>\{{ str \| pluralize }}</p>
+<p>\{{ str \| pluralize(1) }}</p>
+<p>\{{ str \| pluralize(1,true) }}</p>
 
 // js调用
 $api.pluralize('test') //=> "tests" 
@@ -1470,7 +1470,7 @@ $api.pluralize('test', 5, true) //=> "5 tests"
 
 ``` js
 // vue filters
-<p>\{{ str | uppercase }}</p>
+<p>\{{ str \| uppercase }}</p>
 
 // js调用
 var str = 'abc'

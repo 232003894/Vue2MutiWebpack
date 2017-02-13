@@ -32,8 +32,8 @@ return:
   note: 转换后的数字
 code: |   
   // vue filters
-  <p>\{{ num | number }}</p>
-  <p>\{{ num | number({precision:3}) }}</p>
+  <p>\{{ num \| number }}</p>
+  <p>\{{ num \| number({precision:3}) }}</p>
 
   // js调用
   $api.number(1222.615) //=>"1,222.62"
