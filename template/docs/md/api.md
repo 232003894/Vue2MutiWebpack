@@ -1173,7 +1173,7 @@ format 格式化说明
 
 ``` js
 // vue filters
-<p>\{{ date 、| formatDate('yyyy-MM-dd') }}</p>
+<p>\{{ date | formatDate('yyyy-MM-dd') }}</p>
 
 // js调用
 var d = new Date()
