@@ -59,8 +59,6 @@ const plugin = {
           if (opts.title && !msg) {
             msg = opts.title
             opts.title = ''
-          } else {
-            opts.title = ''
           }
           // 内容，支持 html，和默认slot同样功能
           opts.content = msg
@@ -116,6 +114,34 @@ const plugin = {
         $vm.onHide & $vm.onHide()
       }
     }
+    if (options.os.plus) {
+
+    } else {
+      // 注册后退键的提示
+      options.onload(() => {
+        options.addBack({
+          name: 'basic',
+          index: 100,
+          handle: function () {
+            if (options.canHistoryBack() && window.history.length > 1) {
+              window.history.back()
+              return false
+            } else {
+              show('是否退出应用？', {
+                title: '退出',
+                confirmText: '退出应用',
+                cancelText: '不了',
+                onConfirm: () => {
+                  window.close()
+                }
+              })
+            }
+            return true
+          }
+        })
+      })
+    }
+
     vue.mixin({
       created: function () {
         options.confirm && delete options.confirm

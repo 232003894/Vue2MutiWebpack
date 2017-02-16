@@ -2,13 +2,18 @@
   <div class="weui_tab">
     <slot name="header"></slot>
     <div class="weui_tab_bd vux-fix-safari-overflow-scrolling" ref="viewBoxBody" id="vux_view_box_body" :style="{height:bodyHeight}">
-      <div class="pro-webError">
+      <div :class="webcss">
         <div class="ui-error" @click="refresh">
-          <i class="icon iconfont">&#xe6e7;</i>
-          <h4>网络不给力</h4>
+          <icon :type='nowebIcon'></icon>
+          <h4 v-text="noweb"></h4>
           <div class="ui-button">
             <button class="weui_btn weui_btn_default">重新加载</button>
           </div>
+        </div>
+      </div>
+      <div :class="customecss">
+        <div class="ui-error">
+          <slot name="error"></slot>
         </div>
       </div>
       <slot></slot>
@@ -18,10 +23,22 @@
 </template>
 
 <script>
+  import {
+    Icon
+  } from 'app'
+
   export default {
+    components: {
+      Icon
+    },
     data() {
       return {
-        bodyHeight: (document.body.offsetHeight - this.padding) + 'px'
+        bodyHeight: (document.body.offsetHeight - this.padding) + 'px',
+        webcss: 'pro-webError',
+        customecss: 'pro-webError',
+        noweb: '网络不给力',
+        nowebIcon: 'wifi',
+        refreshs: []
       }
     },
     mounted() {
@@ -31,6 +48,11 @@
           self.bodyHeight = (document.body.offsetHeight - this.padding) + 'px'
         })()
       }
+      this.$nextTick(function() {
+        setTimeout(() => {
+          self.getScrollBody().className = 'weui_tab_bd vux-fix-safari-overflow-scrolling active'
+        }, 1)
+      })
     },
     props: {
       // 头部底部的总高度
@@ -40,8 +62,57 @@
       }
     },
     methods: {
+      push_allback(callback) {
+        var isIn = this.refreshs.some((item) => {
+          return callback.toString() === item.toString()
+        })
+        if (!isIn) {
+          this.refreshs.push(callback)
+        }
+      },
       refresh() {
-        $api.refresh()
+        this.refreshs.forEach((cb) => {
+          cb()
+        })
+        this.webError(false)
+      },
+      // dom load
+      // 给刷新用的
+      onload(callback) {
+        this.push_allback(callback)
+        $api.onload(callback)
+      },
+      // plus load(5+ plusReady)
+      // 给刷新用的
+      mounted(callback) {
+        this.push_allback(callback)
+        $api.mounted(callback)
+      },
+      webError(value, msg, icon) {
+        // debugger
+        if (value === false) {
+          this.webcss = 'pro-webError'
+        } else {
+          this.webcss = 'pro-webError active'
+        }
+        if (msg) {
+          this.noweb = msg
+        } else {
+          this.noweb = '网络不给力'
+        }
+        if (icon) {
+          this.nowebIcon = icon
+        } else {
+          this.nowebIcon = 'wifi'
+        }
+      },
+      // 自定义错误
+      customeError(value) {
+        if (value === false) {
+          this.customecss = 'pro-webError'
+        } else {
+          this.customecss = 'pro-webError active'
+        }
       },
       scrollTo(top) {
         this.$refs.viewBoxBody.scrollTop = top
@@ -79,10 +150,19 @@
 <style lang="less">
   @import '~vux/src/styles/weui/widget/weui_tab/weui_tab_tabbar';
 </style>
-<style lang="less">
+<style lang="less" scoped>
   html,
   body {
     overflow-y: hidden;
+  }
+  
+  .weui_tab_bd {
+    opacity: 0;
+    transition: opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .weui_tab_bd.active {
+    opacity: 1;
   }
   
   // webError

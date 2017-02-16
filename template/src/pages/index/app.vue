@@ -1,25 +1,31 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box ref="cBox">
+    <view-box>
       <x-header slot="header" @on-click-title="test">
         头部
       </x-header>
+      <div slot="error" style="text-align: left;margin-left: 50px;" @click.self="customeError(false)">
+        出错了-(点击关闭)
+        <br> 您可以：
+        <br> 1.aaaaaaa
+        <br> 2.bbbbbbbb
+      </div>
       <img src="../../assets/img/logo.png">
       <p>\{{ date | formatDate('yy-MM-dd') }}</p>
       <p>\{{ str | capitalize }}</p>
       <p>\{{ money | currency({thousand:''}) }}</p>
       <p>\{{ money | number({thousand:' '}) }}</p>
-      <p>\{{ json | json.read }}</p>
       <br>
       <div>
         <flexbox>
+          <flexbox-item>
+            <x-button type="warn" @click.native="customeError">业务错误</x-button>
+          </flexbox-item>
           <flexbox-item>
             <x-button type="warn" @click.native="testError">webError</x-button>
           </flexbox-item>
           <flexbox-item>
             <x-button type="primary" @click.native="testOpen">Open</x-button>
-          </flexbox-item>
-          <flexbox-item>
           </flexbox-item>
         </flexbox>
         登录测试
@@ -140,13 +146,20 @@
       }
     },
     mounted() {
+      document.addEventListener('logined', function(e) {
+        console.log('index logined')
+      })
       // console.log(JSON.stringify(window.common, null, 2))
       // $api.log($api.toastClose)
-      $api.mounted(() => {
-        $api.androidKeys()
-      }, true)
-
-      this.$refs.cBox.scrollTo(190)
+      $api.mounted(() => {})
+      $box.scrollTo(190)
+      $box.onload(() => {
+        $api.log('刷新用的 dom onload')
+      })
+      $box.mounted(() => {
+        this.testAjax()
+        $api.log('刷新用的 plus ready')
+      })
     },
     methods: {
       testOpen() {
@@ -266,22 +279,92 @@
         })
       },
       testLogin: function() {
-        $api.login()
+        $api.login(true, () => {
+          console.log('loginCallback')
+        })
       },
       testLoginNoReload: function() {
-        $api.login(false)
+        $api.login(false, () => {
+          console.log('loginCallback')
+        })
       },
       testError: function() {
-        $api.webError()
+        $box.webError()
+      },
+      customeError(val) {
+        $box.customeError(val)
       },
       test() {
         $api.toast('Header Title Click 测试')
+      },
+      testAjax() {
+        // http://211.149.193.19:8080/api/customers
+        // Advertisement
+        var test1 = () => {
+          return axios.get('Advertisement', {
+            params: {
+              s_id: 1,
+              w: 0
+            },
+            app: {
+              webError: $box.webError,
+              load: true,
+              loginCallback: () => {
+                console.log('loginCallback')
+              }
+            },
+            timeout: 3000
+          })
+        }
+        var test2 = () => {
+          return axios.get('http://211.149.193.19:8080/api/customers', {
+            params: {
+              adv_gid: 2,
+              s_id: 1
+            },
+            app: {
+              webError: $box.webError,
+              load: true
+            },
+            timeout: 3000
+          })
+        }
+        $api.loading()
+        axios.all([test2()])
+          .then(axios.spread(function(acct, perms) {
+            setTimeout(() => {
+              $api.loadingClose()
+            }, 150)
+            // debugger
+            // 两个请求现在都执行完成
+          }), function(response) {
+            // debugger
+            setTimeout(() => {
+              $api.loadingClose()
+            }, 150)
+            // 两个请求现在都执行完成
+          })
+        // axios.get('Advertisement', {
+        //   params: {
+        //     adv_gid: 3,
+        //     s_id: 1
+        //   },
+        //   app: {
+        //     webError: $box.webError,
+        //     load: true
+        //   },
+        //   timeout: 100000
+        // }).then(function(response) {
+        //   // debugger
+        //   $api.log('正常\r\n' + JSON.stringify(response, null, 4))
+        // }, function(response) {
+        //   // debugger
+        //   // handle error
+        //   $api.log('错误\r\n' + JSON.stringify(response, null, 4))
+        // })
       }
     }
   }
-  $api.mounted(() => {
-    $api.log('test')
-  }, true)
 </script>
 
 <style lang="less">

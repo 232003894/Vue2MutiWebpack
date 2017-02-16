@@ -13,8 +13,10 @@ module.exports = {
     'html'
   ],
   "globals": {
+    '$box': true,
     "plus": true,
     "alert": true,
+    "axios": true,
     "$api": true
   },
   // add your custom rules here

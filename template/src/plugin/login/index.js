@@ -15,10 +15,10 @@ const plugin = {
 
     /**
      * 登录
-     * @param {any} reload
+     * @param {any} necessary
      * @param {any} callback
      */
-    const show = (reload, callback) => {
+    const show = (necessary, callback) => {
       /**
        * 回调：
        * 有些操作或请求会验证是否登录，未登录时会自动调用登录
@@ -26,18 +26,18 @@ const plugin = {
        */
       // callback = callback || (() => {})
       // 是否
-      // reload === undefined
-      if (typeof reload === 'boolean') {
+      // necessary === undefined
+      if (typeof necessary === 'boolean') {
         callback = callback || (() => {})
-      } else if (options.isFunction(reload)) {
-        callback = reload
-        reload = true
+      } else if (options.isFunction(necessary)) {
+        callback = necessary
+        necessary = true
       } else {
         callback = () => {}
-        reload = true
+        necessary = true
       }
       $vm.callback = callback
-      $vm.reload = reload
+      $vm.necessary = necessary
 
       options.addMsgBack({
         name: 'login',
@@ -61,10 +61,9 @@ const plugin = {
       if ($vm.show === true) {
         // 执行登录成功回调
         $vm.callback && $vm.callback()
-        if ($vm.reload) {
-          // 来源页面 登陆后 需要刷新
-          options.refresh()
-        }
+        // if ($vm.necessary) {
+        //   // 来源页面 登陆后 需要刷新
+        // }
         // 全局事件通知：已经登录
         options.fireAll('logined')
         // 登录完成后关闭
@@ -77,7 +76,7 @@ const plugin = {
     const cancle = () => {
       if ($vm.show === true) {
         // 取消登录,不执行回调
-        if ($vm.reload) {
+        if ($vm.necessary) {
           // 来源页面 登陆后 需要刷新
           if (options.os.plus) {
             if (options.plusBack()) {
@@ -128,7 +127,7 @@ const plugin = {
         // 关闭登录层
         $vm.show = false
         // 重置属性
-        $vm.reload = false
+        $vm.necessary = false
         $vm.callback = () => {}
       }
     }

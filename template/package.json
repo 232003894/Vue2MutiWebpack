@@ -13,13 +13,12 @@
     "lint": "eslint --ext .js,.vue src"{{/lint}}
   },
   "dependencies": {
-    "accounting": "^0.4.1",
+    "h5p.js": "^1.0.3",
     "es6-promise": "^4.0.5",
     "fastclick": "^1.0.6",
-    "pluralize": "^3.1.0",
     "validator": "^6.2.1",
     "vue": "^2.1.0",
-    "vux": "^2.1.0-rc.46"
+    "vux": "^2.1.0-rc.51"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

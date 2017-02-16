@@ -1,10 +1,11 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box ref="viewBox">
+    <view-box>
       <x-header slot="header" :left-options="{showBack:true,preventGoBack:true,backText:'取消'}" @on-click-back="back()" style="width:100%;position:absolute;left:0;top:0;z-index:100;">登录</x-header>
       <br>
-      <group>
-        <x-input title="账号">
+      <group label-width="5em">
+        <x-input>
+          <span slot=label>s</span>
           <span slot=right>fd</span>
         </x-input>
         <x-input title="密码" type="password">
@@ -28,12 +29,12 @@
 
 <script>
   import {
-    XInput,
     ViewBox,
     XHeader
   } from 'app'
   import {
     Group,
+    XInput,
     Flexbox,
     FlexboxItem,
     XButton
@@ -58,7 +59,7 @@
         $api.loginCancle()
       },
       testError: function() {
-        $api.webError()
+        $box.webError()
       },
       back() {
         // 关闭login,也就是取消登录

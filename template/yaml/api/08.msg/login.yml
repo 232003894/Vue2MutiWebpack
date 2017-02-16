@@ -8,11 +8,11 @@ note: |
 tip: |
   Vue组件模式下可用
 args:
-  reload:
+  necessary:
     type: Boolean
-    note: 登录后是否需要重新载入来源页，默认值：true
+    note: 是否必须登录，默认值：true，表示取消登录会将来源页面或窗体一起关闭
     required: false
-  options:
+  callback:
     type: Function
     note: 登录成功的回调
     required: false

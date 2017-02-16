@@ -1,7 +1,4 @@
 import myMsg from 'vux/src/components/loading'
-import {
-  os
-} from '../../libs/api/plus/os.js'
 
 let $vm
 // let watcher
@@ -48,7 +45,7 @@ const plugin = {
           return true
         }
       })
-      if (nativeFirst && os.plus) {
+      if (nativeFirst && options.os.plus) {
         // 优先使用原生并且是plus环境
         nShow(msg, opts)
       } else {
@@ -80,7 +77,7 @@ const plugin = {
     }
     const hide = () => {
       options.removeMsgBack('loading', 50)
-      if (nativeFirst && os.plus) {
+      if (nativeFirst && options.os.plus) {
         // 优先使用原生并且是plus环境
         nHide()
       } else {

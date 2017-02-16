@@ -18,29 +18,9 @@ pluginsConfig.push(new webpack.optimize.CommonsChunkPlugin({
 
 // 环境参数
 pluginsConfig.push(new webpack.DefinePlugin({
-  'process.env': config.build.env,
-  IS_PRODUCTION: true
+  'process.env': config.dev.env,
+  IS_PRODUCTION: false
 }))
-// 压缩
-// pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
-//   mangle: true,
-//   // https://github.com/mishoo/UglifyJS2/blob/master/lib/output.js
-//   output: {
-//     //中文ascii化，非常有用！防止中文乱码的神配置
-//     ascii_only: true,
-//     //在输出中保存版权注释
-//     comments: false
-//   },
-//   // https://github.com/mishoo/UglifyJS2/blob/master/lib/compress.js
-//   compress: {
-//     // 不输出警告
-//     warnings: false,
-//     // 去掉 console
-//     drop_console: false,
-//     // 去掉 debugger
-//     drop_debugger: true
-//   }
-// }))
 
 pluginsConfig.push(new webpack.optimize.OccurenceOrderPlugin())
 

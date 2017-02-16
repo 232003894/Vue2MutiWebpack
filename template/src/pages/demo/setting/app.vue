@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box ref="cBox">
+    <view-box>
       <img src="../../../assets/img/logo.png">
       <flexbox>
         <flexbox-item>
@@ -47,11 +47,7 @@
       FlexboxItem,
       XButton
     },
-    mounted() {
-      $api.mounted(() => {
-        $api.androidKeys()
-      }, true)
-    },
+    mounted() {},
     methods: {
       home() {
         $api.open(window.plus.runtime.appid)
@@ -67,7 +63,7 @@
         $api.login(false)
       },
       testError: function() {
-        $api.webError()
+        $box.webError()
       }
     }
   }

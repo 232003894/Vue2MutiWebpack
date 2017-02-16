@@ -1,7 +1,6 @@
 {
   "ViewBox": "src/components/base/view-box.vue",
   "XHeader": "src/components/base/x-header.vue",
-  "XInput": "src/components/base/x-input.vue",
   "Icon": "src/components/base/icon.vue",
   "Login": "src/components/user/login.vue"
 }

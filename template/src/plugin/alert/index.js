@@ -1,7 +1,4 @@
 import myMsg from 'vux/src/components/alert'
-import {
-  os
-} from '../../libs/api/plus/os.js'
 
 let $vm
 let nShow
@@ -54,8 +51,6 @@ const plugin = {
           // 弹窗标题
           if (opts.title && !msg) {
             msg = opts.title
-            opts.title = ''
-          } else {
             opts.title = ''
           }
           // 按钮文字

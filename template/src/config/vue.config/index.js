@@ -1,24 +1,21 @@
-// http 请求
-
-export default function (vue, api) {
+export default function (vue, _api) {
   // 由于ESLint会检测没有定义的变量，因此需要这一个`global`注释声明IS_PRODUCTION是一个全局变量(当然在本例中并不是)来规避warning
   /* global IS_PRODUCTION:true */
   if (IS_PRODUCTION) {
-    // 由于本脚手架并没有牵涉到HTTP请求，因此此处仅作为演示分离开发/生产环境之用。
+    // 生产环境之用
     vue.config.devtools = false
-    // vue.http.options.root = 'http://192.168.2.241:8003/'
   } else {
+    // 开发环境之用
     vue.config.devtools = true
-    // vue.http.options.root = 'http://192.168.2.241:8003/'
   }
 
-  vue.filter('formatDate', api.formatDate)
-  vue.filter('capitalize', api.capitalize)
-  vue.filter('uppercase', api.uppercase)
-  vue.filter('lowercase', api.lowercase)
-  vue.filter('pluralize', api.pluralize)
-  vue.filter('currency', api.currency)
-  vue.filter('number', api.number)
-
+  // 过滤器
+  vue.filter('formatDate', _api.formatDate)
+  vue.filter('capitalize', _api.capitalize)
+  vue.filter('uppercase', _api.uppercase)
+  vue.filter('lowercase', _api.lowercase)
+  vue.filter('pluralize', _api.pluralize)
+  vue.filter('currency', _api.currency)
+  vue.filter('number', _api.number)
   // vue.filter('debounce', api.debounce)
 }

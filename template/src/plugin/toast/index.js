@@ -1,7 +1,4 @@
 import myMsg from 'vux/src/components/toast'
-import {
-  os
-} from '../../libs/api/plus/os.js'
 
 let $vm
 let watcher
@@ -35,7 +32,7 @@ const plugin = {
       } else {
         nativeFirst = false
       }
-      if (nativeFirst && os.plus) {
+      if (nativeFirst && options.os.plus) {
         // 优先使用原生并且是plus环境
         nShow(msg, opts)
       } else {
@@ -84,7 +81,7 @@ const plugin = {
       }
     }
     const hide = () => {
-      if (nativeFirst && os.plus) {
+      if (nativeFirst && options.os.plus) {
         // 优先使用原生并且是plus环境
         nHide()
       } else {
