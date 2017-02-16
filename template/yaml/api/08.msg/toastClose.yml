@@ -7,10 +7,12 @@ note: |
   关闭toast信息<br>
   主要用于Android中的后退键关闭
 warn: |
-  只在Vue组件模式可用
+  只在Vue组件模式 并且 显示时传入的 options.<b>nativeFirst</b>为<b>false</b>时（默认值）可用
 code: |   
   // 关闭弹窗
   $api.toastClose()
 changes:
   v1.0.1:
     - '[change] 由toast.hide 改为 toastClose'
+  v1.1.0:
+    - '[feature] 新增：调用Vue组件，实现！'

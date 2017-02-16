@@ -8,8 +8,13 @@ filetype: method
 note: |
   用于显示一个带有指定消息和 OK 及取消按钮的对话框<br>
 tip: |
-  Vue组件模式、H5+模式、window原生模式 都可用<br>
-  优先级：Vue组件模式 > H5 Plus模式 > window原生模式
+  Vue组件模式、H5+模式、window原生模式 都可用
+warn: |
+  options.nativeFirst：<br>
+  （默认值）<b>false：使用Vue组件</b><br>
+  优先级：Vue组件模式 > H5 Plus模式 > window原生模式<br>
+  <b>true：不使用Vue组件</b><br>
+  优先级：H5 Plus模式 > window原生模式
 args:
   msg:
     type: String
@@ -40,6 +45,15 @@ args:
       onCancel:
         type: Function
         note: 取消方法
+      nativeFirst:
+        type: Boolean
+        note: 【Vue组件】是否优先使用原生的，默认值false
+      maskTransition:
+        type: String
+        note: 【Vue组件】遮罩动画，默认值 'vux-fade'
+      dialogTransition:
+        type: String
+        note: 【Vue组件】弹窗主体动画，默认值 'vux-dialog'
 code: |        
   // 简单示例 msg
   $api.confirm('消息123')
@@ -50,16 +64,16 @@ code: |
     confirmText:'YES',
     cancelText:'NO',
     onShow:()=>{
-      console.log('onShow')
+      console.log('confirm onShow')
     },
     onHide:()=>{
-      console.log('onHide')
+      console.log('confirm onHide')
     },
     onConfirm:()=>{
-      console.log('确定')
+      console.log('confirm 确定')
     },
     onCancel:()=>{
-      console.log('取消')
+      console.log('confirm 取消')
     }
   })
 changes:
@@ -68,4 +82,5 @@ changes:
   v1.0.1:
     - '[change] confirm.show 改为 confirm'
   v1.1.0:
-    - '[todo] 暂未实现Vue组件模式'
+    - '[feature] 新增：调用Vue组件，实现！'
+    - '[change] 是否优先使用原生方法,nativeFirst'

@@ -4,20 +4,21 @@ tags:
 name: mounted
 filetype: method
 note: |
-  Dom加载完成
+  plus设备加载完成
+tip: |
+  web：等同于onload <br/>
+  5+：‘plusready’后（window.plus存在）：立即执行，否则加入到‘plusready’事件中
 args:
   callback:
     type: Function
     note: 窗体
-  needRefresh:
-    type: Boolean
-    note: 默认值:true,是否需要加入刷新列表中,提供给refresh使用
-    required: false
 return:
   type: Object
   note: $api对象
 code: |        
   $api.mounted(()=>{
     console.log('页面加载完成')
-  },false)
+  })
 changes:
+  v1.1.0:
+    - '[fix] 手机app中会调用2次的bug'

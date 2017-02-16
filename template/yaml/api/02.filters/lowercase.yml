@@ -1,0 +1,22 @@
+tags:
+  - Filter
+  - 通用
+  - Vue filter
+name: lowercase
+filetype: method
+note: |
+  字符串格式化，小写：'AbC' => 'abc'
+args:
+  value:
+    type: String
+    note: 带转换的字符串
+return: 
+  type: String
+  note: 转换后的字符串
+code: |   
+  // vue filters
+  <p>\{{ str | lowercase }}</p>
+
+  // js调用
+  var str = 'AbC'
+  $api.lowercase(str)

@@ -14,6 +14,9 @@ npm run dev
 # 生成
 npm run build
 
+# 生成 不压缩处理的文件
+npm run build+
+
 # 生成文档
 npm run build-docs
 

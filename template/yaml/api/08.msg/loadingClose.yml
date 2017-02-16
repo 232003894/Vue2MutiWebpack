@@ -10,10 +10,17 @@ tip: |
   window原生模式不可用<br>
   Vue组件模式、H5+模式 可用
 warn: |
-  优先级：H5 Plus模式 > Vue组件模式
+  loading显示时传入的 options.<b>nativeFirst</b>：<br>
+  <b>false</b>（默认值）<br>
+  优先级：Vue组件模式 > H5 Plus模式<br>
+  <b>true</b><br>
+  优先级：H5 Plus模式
 code: |   
   // 关闭等待对话框
   $api.loadingClose()
 changes:
   v1.0.1:
     - '[change] 从loading中分离出来loadingClose'
+  v1.1.0:
+    - '[feature] 新增：调用Vue组件，实现！'
+    - '[change] 是否优先使用原生方法,nativeFirst'

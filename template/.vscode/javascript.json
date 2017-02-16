@@ -1,0 +1,31 @@
+{
+  // $api Utils
+  "$api.delHtmlTag": {
+    "prefix": "api delHtmlTag",
+    "body": [
+      "\\$api.delHtmlTag(${1:''})"
+    ],
+    "description": "去掉html标记"
+  },
+  "$api.equals": {
+    "prefix": "api equals",
+    "body": [
+      "\\$api.equals(${1:x},${2:y})"
+    ],
+    "description": "比较2个对象是否相等,递归比较"
+  },
+  "$api.getStyle": {
+    "prefix": "api getStyle",
+    "body": [
+      "\\$api.getStyle(${1:obj})"
+    ],
+    "description": "获取dom元素的style对象"
+  },
+  "$api.getType": {
+    "prefix": "api getType",
+    "body": [
+      "\\$api.getType(${1:obj})"
+    ],
+    "description": "获取类型"
+  }
+}

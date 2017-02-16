@@ -1,0 +1,28 @@
+tags:
+  - Utils
+  - 通用
+name: toFixed
+filetype: Method
+note: |
+  把 Number 四舍五入为指定小数位数的数字<br>
+  参考：http://openexchangerates.github.io/accounting.js/#methods
+tip: |
+  解决原生js toFixed 四舍五入的问题 <br/>
+  (0.615).toFixed(2) // "0.61" <br/>
+  $api.toFixed(0.615, 2) // "0.62"
+args:
+  value:
+    type: Number
+    required: true
+    note: 需要四舍五入的数字
+  precision:
+    type: Number
+    required: false
+    note: 小数位的精度，几位小数
+return: 
+  type: Number
+  note: 四舍五入后的数字
+code: |    
+  // 2位精度
+  $api.toFixed(0.615, 2) // "0.62"
+changes:

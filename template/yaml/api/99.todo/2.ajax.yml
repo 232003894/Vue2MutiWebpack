@@ -1,0 +1,6 @@
+name: ajax
+changes:
+  Next:
+    - '[todo] header'
+    - '[todo] 请求拦截-request'
+    - '[todo] 请求拦截-response'

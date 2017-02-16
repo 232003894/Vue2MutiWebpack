@@ -1,0 +1,28 @@
+tags:
+  - Dialog
+  - 组件扩展
+name: login
+filetype: method
+note: |
+  登录层
+tip: |
+  Vue组件模式下可用
+args:
+  necessary:
+    type: Boolean
+    note: 是否必须登录，默认值：true，表示取消登录会将来源页面或窗体一起关闭
+    required: false
+  callback:
+    type: Function
+    note: 登录成功的回调
+    required: false
+code: |        
+  // 简单示例 
+  $api.login()
+  // 完整示例 
+  $api.login(false,()=>{
+      alert('登录成功')
+  })
+changes:
+  v1.1.0:
+    - '[feature] 新增：调用Vue组件，实现！'

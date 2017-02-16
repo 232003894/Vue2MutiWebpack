@@ -1,0 +1,4 @@
+name: vux
+changes:
+  Next:
+    - '[todo] dialog:这个在组件扩展中注册api'

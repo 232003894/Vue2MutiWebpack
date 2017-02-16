@@ -1,0 +1,37 @@
+tags:
+  - Filter
+  - 通用
+  - Vue filter
+name: pluralize
+filetype: method
+note: |
+  单词复数
+tip: |
+  参考：https://www.npmjs.com/package/pluralize
+args:
+  value:
+    type: String
+    note: 待处理的单词
+  count:
+    type: Number
+    note: 次数
+    required: false
+  inclusive:
+    type: Boolean
+    note: 包含次数
+    required: false
+return: 
+  type: String
+  note: 转换后的字符串
+code: |   
+  // vue filters
+  <p>\{{ str | pluralize }}</p>
+  <p>\{{ str | pluralize(1) }}</p>
+  <p>\{{ str | pluralize(1,true) }}</p>
+
+  // js调用
+  $api.pluralize('test') //=> "tests" 
+  $api.pluralize('test, 1) //=> "test" 
+  $api.pluralize('test', 5) //=> "tests" 
+  $api.pluralize('test', 1, true) //=> "1 test" 
+  $api.pluralize('test', 5, true) //=> "5 tests" 

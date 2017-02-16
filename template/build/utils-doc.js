@@ -497,13 +497,13 @@ exports.buildChanges = function (infos) {
       // all
       __str += `\n#### ${j}\n`
       __str += ` <ul>`
-      // todo
+      // todos
       __str_todo += `\n#### ${j}\n`
       __str_todo += `<ul>`
 
       let todosCount = 0
       let othersCount = 0
-      rs[i][j].forEach(one => {
+      rs[i][j].forEach && rs[i][j].forEach(one => {
         let obj = getChangeObj(one)
         if (obj.type === 'todo') {
           todosCount++

@@ -4,26 +4,15 @@ tags:
 name: canHistoryBack
 filetype: Method
 note: |
-  get/set 后退是否使用history.back,默认值 true<br>
-  true:back功能会先使用history.back<br>
-  false:不使用history.back,直接back,比如spa的路由首页(直接退出就可以了),而其他路由需要<br>
-args:
-  value:
-    type: Any
-    required: false
-    note: 值(只要值不是false都代表true),输入则set,不输入则get
+  是否可以后退
 return: 
   type: Boolean
-  note: 后退是否使用history.back
+  note: 是否可以后退
 code: |    
   // set true
-  $api.canHistoryBack(true)
-  $api.canHistoryBack('false')
-  $api.canHistoryBack(1)
-  // set false
-  $api.canHistoryBack(false)
-  // get
   $api.canHistoryBack()
 changes:
+  v1.1.0:
+    - '[change] 改为是否可以后退'
   v1.0.1:
     - '[change] getCanHistory和setCanHistory 合并为 canHistoryBack'

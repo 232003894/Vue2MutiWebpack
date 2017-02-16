@@ -9,8 +9,13 @@ note: |
   弹出的提示消息为非阻塞模式，显示指定时间后自动消失
 tip: |
   window原生模式不可用<br>
-  Vue组件模式、H5+模式 可用<br>
-  优先级：Vue组件模式 > H5 Plus模式
+  Vue组件模式、H5+模式 可用
+warn: |
+  options.nativeFirst：<br>
+  （默认值）<b>false：使用Vue组件</b><br>
+  优先级：Vue组件模式 > H5 Plus模式<br>
+  <b>true：不使用Vue组件</b><br>
+  优先级：H5 Plus模式
 args:
   msg:
     type: String
@@ -29,6 +34,18 @@ args:
       onHide:
         type: Function
         note: 提示关闭后执行方法
+      nativeFirst:
+        type: Boolean
+        note: 【Vue组件】是否优先使用原生的，默认值false
+      type:
+        type: String
+        note: 【Vue组件】类型，默认值 text，可选值 success, warn, cancel, text
+      width:
+        type: String
+        note: 【Vue组件】宽度，默认值 7.6em
+      isShowMask:
+        type: Boolean
+        note: 【Vue组件】是否显示遮罩，如果显示，用户将不能点击页面上其他元素，默认值 true
 code: |        
   // 简单示例 msg
   $api.toast('消息123')
@@ -37,14 +54,15 @@ code: |
   $api.toast('消息123',{
     time:2000,
     onShow:()=>{
-      console.log('onShow')
+      console.log('toast onShow')
     },
     onHide:()=>{
-      console.log('onHide')
+      console.log('toast onHide')
     }
   })
 changes:
   v1.0.0:
     - '[change] msg 属性从 options中单独出来,为必填项,options为选填项'
   v1.1.0:
-    - '[todo] 暂未实现Vue组件模式'
+    - '[feature] 新增：调用Vue组件，实现！'
+    - '[change] 是否优先使用原生方法,nativeFirst'
